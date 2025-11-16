@@ -1,0 +1,599 @@
+.mywork{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 100px 180px;
+}
+
+.mywork-title{
+    position: relative;
+}
+
+.mywork-title h1{
+    padding: 0px 30px;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.mywork-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.mywork-container img{
+    box-sizing: border-box;
+    width: 380px;
+    height: 280px;
+    transition: 0.3s;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: 0.3s;
+    color: white;
+}
+
+.work-item:hover .work-overlay {
+    opacity: 1;
+}
+
+.mywork-container img:hover{
+   transform: scale(1.05);
+}
+
+.work-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.work-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.work-category {
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.work-status {
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.work-status.online {
+    background: #10B981;
+    color: white;
+}
+
+.work-status.encours {
+    background: #F59E0B;
+    color: white;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #f8f9fa;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: #e9ecef;
+    transform: rotate(90deg);
+}
+
+/* Layout principal */
+.modal-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Colonne gauche - Image */
+.modal-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal-main-image {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Colonne droite - Contenu */
+.modal-right {
+    padding-right: 20px;
+}
+
+.modal-header {
+    margin-bottom: 25px;
+}
+
+.modal-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.modal-subtitle {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modal-year {
+    background: #2563eb;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.modal-type {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.modal-technologies {
+    margin-bottom: 25px;
+}
+
+.modal-technologies h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #374151;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #e5e7eb;
+}
+
+.modal-description {
+    margin-bottom: 30px;
+}
+
+.modal-description h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+.modal-description p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.modal-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-btn {
+    background: linear-gradient(264deg, #DA7C25 5.36%, #B923E1 100%);
+    color: white;
+}
+
+.upload{
+    width: 30px;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+}
+
+.mockup-btn {
+    background: transparent;
+    color: #2563eb;
+    border-color: #2563eb;
+}
+
+.figma{
+    width: 22px;
+}
+
+.mockup-btn:hover {
+    /* background: #2563eb; */
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Section galerie en bas */
+.modal-bottom {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 30px;
+}
+
+.modal-bottom h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #374151;
+}
+
+.modal-gallery {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.gallery-image {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Scrollbar personnalisée */
+.modal-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.modal-gallery::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.modal-gallery::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.modal-gallery::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Personnalisation de la barre de défilement pour le contenu du modal */
+.modal-content::-webkit-scrollbar {
+    /* Largeur de la barre de défilement verticale */
+    width: 12px; 
+    min-height: 30px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    /* La piste est rendue totalement transparente ou de la même couleur que le fond si nécessaire */
+    background: transparent; 
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    /* Couleur du "pouce" de la scrollbar (la partie que l'on traîne) */
+    background-color: #dbeaff; /* Un bleu très clair, comme dans l'image de référence */
+    /* Bordure arrondie du "pouce" */
+    border-radius: 6px; /* Moitié de la largeur pour un arrondi complet */
+    /* Ajouter une bordure transparente pour créer l'espacement si le track n'est pas utilisé */
+    border: 3px solid transparent; 
+    /* Utiliser background-clip pour garantir que la bordure est transparente et que la couleur de fond reste à l'intérieur */
+    background-clip: content-box; 
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    /* Légère variation de couleur au survol */
+    background-color: #a8c8ff; 
+}
+
+
+/* Lightbox Styles */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: -40px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+/* Animation d'ouverture de la lightbox */
+.lightbox-overlay {
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { 
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Curseur pointer sur les images de la galerie */
+.gallery-image {
+    cursor: zoom-in;
+    transition: all 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive lightbox */
+@media (max-width: 768px) {
+    .lightbox-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+    
+    .lightbox-prev {
+        left: 10px;
+    }
+    
+    .lightbox-next {
+        right: 10px;
+    }
+    
+    .lightbox-close {
+        top: -40px;
+        right: 10px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .modal-right {
+        padding-right: 0;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+.mywork-showmore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 20px 60px;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 80px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.mywork-showmore:hover{
+    gap: 30px;
+    transition: 0.6s;
+}
+
+.mywork-showmore img{
+    width: 25px;
+}

@@ -1,0 +1,363 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 80px; */
+    padding: 0 150px;
+}
+
+.about-title{
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.about-title h1{
+  padding: 0 30px;
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.about-title img{
+    position: absolute;
+    top: 30px;
+    left: 400px;
+    z-index: -1;
+    width: 150px;
+}
+
+.about-left img{
+  width: 100%;
+  max-width: 750px;
+}
+
+.about-sections{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.about-right{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.about-para{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 23px;
+    font-weight: 500;
+    max-width: 950px;
+}
+
+.about-skills{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-skill{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.about-skill p{
+    min-width: 150px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.about-skill hr{
+    outline: none;
+    border: none;
+    width: 50%;
+    height: 8px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #FF8A00 -5.09%, #B415FF 106.28%);
+}
+
+.about-achievements{
+     display: flex;
+     width: 100%;
+     justify-content: space-around;
+     margin-bottom: 80px;
+}
+
+.about-achievement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 0.5s;
+    margin-top: -70px;
+}
+
+.about-achievement h1{
+    font-size: 50px;
+    font-weight: 700;
+    /* background: linear-gradient(264deg, #FF8A00 -5.09%, #B415FF 106.28%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.about-achievement p{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.about-skill:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.about-achievement:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1200px) {
+    .about {
+        padding: 0 50px;
+    }
+    
+    .about-sections {
+        gap: 40px;
+    }
+    
+    .about-title h1 {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .about {
+        padding: 0 30px;
+    }
+    
+    .about-sections {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-title h1 {
+        font-size: 55px;
+    }
+    
+    .about-title img {
+        left: 150px;
+        width: 130px;
+    }
+    
+    .about-achievements {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        padding: 0 20px;
+        margin-top: 40px;
+    }
+    
+    .about-title h1 {
+        font-size: 45px;
+    }
+    
+    .about-title img {
+        left: 120px;
+        width: 110px;
+        top: 25px;
+    }
+    
+    .about-para {
+        font-size: 22px;
+    }
+    
+    .about-skill {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .about-skill p {
+        min-width: auto;
+        font-size: 22px;
+    }
+    
+    .about-skill hr {
+        width: 100% !important;
+    }
+    
+    .about-achievement h1 {
+        font-size: 50px;
+    }
+    
+    .about-achievement p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about {
+        padding: 0 15px;
+    }
+    
+    .about-title h1 {
+        font-size: 35px;
+        padding: 0 20px;
+    }
+    
+    .about-title img {
+        left: 80px;
+        width: 90px;
+        top: 20px;
+    }
+    
+    .about-para {
+        font-size: 20px;
+        gap: 15px;
+    }
+    
+    .about-right {
+        gap: 30px;
+    }
+    
+    .about-skills {
+        gap: 15px;
+    }
+    
+    .about-skill p {
+        font-size: 20px;
+    }
+    
+    .about-achievements {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .about-achievement h1 {
+        font-size: 45px;
+    }
+    
+    .about-achievement p {
+        font-size: 18px;
+    }
+}
+
+/* === FOND SPATIAL AMÉLIORÉ - VISIBILITÉ AUGMENTÉE === */
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fond spatial dimensionnel animé - VISIBILITÉ AUGMENTÉE */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(218, 124, 37, 0.25) 0%, transparent 80%),
+        radial-gradient(ellipse at 80% 80%, rgba(185, 35, 225, 0.25) 0%, transparent 80%),
+        radial-gradient(ellipse at 40% 60%, rgba(79, 70, 229, 0.15) 0%, transparent 80%),
+        radial-gradient(ellipse at 60% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 80%),
+        linear-gradient(135deg, #0a081f 0%, #252150 50%, #1c1a35 100%);
+    z-index: -2;
+}
+
+/* Grille dimensionnelle animée - VISIBILITÉ AUGMENTÉE */
+.about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 95%, rgba(255,255,255,0.09) 100%),
+        linear-gradient(0deg, transparent 95%, rgba(255,255,255,0.09) 100%);
+    background-size: 50px 50px;
+    /* animation: grid-move 20s linear infinite; */
+    z-index: -1;
+    opacity: 0.4;
+}
+
+@keyframes grid-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Conteneur des étoiles - VISIBILITÉ AUGMENTÉE */
+.about-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.about-star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: star-twinkle var(--duration) infinite ease-in-out;
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(28, 18, 18, 0.5);
+}
+
+@keyframes star-twinkle {
+    0%, 100% { 
+        opacity: 0.1;
+        transform: scale(0.4);
+    }
+    50% { 
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+/* Nébuleuses supplémentaires pour plus de profondeur */
+.about-nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.4;
+    animation: nebula-float 15s infinite ease-in-out;
+    z-index: -1;
+}
+
+.about-nebula-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(218, 124, 37, 0.3), transparent);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.about-nebula-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(185, 35, 225, 0.3), transparent);
+    bottom: 10%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+@keyframes nebula-float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -40px) scale(1.1); }
+    66% { transform: translate(-30px, 30px) scale(0.9); }
+}

@@ -1,0 +1,221 @@
+/* Navbar.css corrigé */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 170px;
+    position: fixed; /* ← AJOUTÉ */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* ← AJOUTÉ */
+    padding: 15px 70px; /* ← AJOUTÉ pour l'espacement */
+    transition: all 0.4s ease; /* ← AJOUTÉ pour animations */
+    background: transparent; /* ← Fond transparent par défaut */
+}
+
+.nav-connect img{
+    width: 25px !important;
+}
+
+/* État quand on scroll */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0; /* ← IMPORTANT: reset margin en scroll */
+    padding: 10px 170px; /* ← Padding réduit en scroll */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.navbar img{
+    width: 100%;
+    max-width: 170px;
+}
+
+
+
+/* Menu principal */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    font-size: 20px;
+}
+
+/* Liens de navigation */
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.anchor-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.anchor-link:hover {
+    color: #B923E1;
+}
+
+.anchor-link p {
+    margin: 0;
+    padding: 8px 0;
+}
+
+.underline-logo{
+    width: 50px !important;
+}
+
+/* Bouton Connect */
+.nav-connect {
+    display: flex;
+    align-items: center;
+    padding: 12px 30px;
+    border-radius: 60px;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 100%);
+    cursor: pointer;
+    transition: 0.5s;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 8px;
+}
+
+.nav-connect:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(185, 35, 225, 0.4);
+}
+
+/* Soulignement actif */
+.nav-menu li img {
+    display: flex;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Menu Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; /* ← Au-dessus du menu */
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Overlay pour fermer le menu en cliquant à côté */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1200px) {
+    .navbar {
+        margin: 20px 50px;
+        padding: 15px 50px;
+    }
+    
+    .navbar.scrolled {
+        padding: 10px 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        margin: 20px 30px;
+        padding: 15px 30px;
+    }
+    
+    .navbar.scrolled {
+        padding: 10px 30px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: rgba(31, 31, 31, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    /* Afficher l'overlay quand le menu est ouvert */
+    .nav-menu.active + .menu-overlay {
+        display: block;
+    }
+    
+    .nav-connect {
+        display: none;
+    }
+    
+    /* Animation hamburger -> croix */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        margin: 20px 15px;
+        padding: 15px 20px;
+    }
+    
+    .navbar.scrolled {
+        padding: 10px 20px;
+    }
+    
+    .nav-menu {
+        width: 100%;
+    }
+}
+
+/* Ajuster le scroll pour les ancres */
+section {
+    scroll-margin-top: 80px;
+}
