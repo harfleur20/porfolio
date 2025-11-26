@@ -76,7 +76,7 @@ function Hero() {
             Stage | Alternance | Freelance
           </p>
           <div className="hero-action">
-            {/* <button className="hero-connect">Connect with me</button> */}
+            <button className="hero-connect">Demander un devis</button>
             <button className="hero-resume">Télecharger mon CV</button>
           </div>
         </div>
