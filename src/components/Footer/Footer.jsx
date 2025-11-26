@@ -26,9 +26,9 @@ const Footer = () => {
      <div className="footer-bottom">
      <div className="footer-bottom-left">copyright 2025 Francis Kenne All rights</div>
      <div className="footer-bottom-right">
-        <p>Term of Servives</p>
+        <p>Termes et Servives</p>
         <p>Privacy Policy</p>
-        <p>Connect with me</p>
+        <p>Se connecter à moi</p>
      </div>
      </div>
     </div>
