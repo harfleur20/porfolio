@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import footer_logo from '../../assets/footer_logo.svg'
+import footer_logo from '../../assets/logo.png'
 import user_icon from '../../assets/user_icon.svg'
 
 const Footer = () => {
@@ -9,14 +9,15 @@ const Footer = () => {
       <div className="footer-top">
         <div className="footer-top-left">
         <img src={footer_logo} alt="" />
-        <p>I'am a frontend developper from, USA with 10 years of experience</p>
+        
+        <p>Je suis développeur frontend, basé en France <br /> avec 2 d'expérience.</p>
         </div>
         <div className="footer-top-right">
             <div className="footer-email-input">
                 <img src={user_icon} alt="" />
-                <input type="email" placeholder='Enter your email' />
+                <input type="email" placeholder='Enter votre email' />
                 <div className="footer-subscribe">
-                    souscribe
+                    souscrire
                 </div>
             </div>
         </div>

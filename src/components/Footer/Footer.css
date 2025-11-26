@@ -1,7 +1,7 @@
 .footer{
     display: flex;
     flex-direction:column;
-    margin: 50px 100px;
+    margin: 100px 180px;
     gap: 30px;
 }
 
@@ -11,8 +11,13 @@
 }
 
 .footer-top-left p{
- font-size: 20px;
+ font-size: 18px;
  max-width: 400px;
+}
+
+.footer-top-left img{
+    width: clamp(80px, 50vw, 180px);
+    margin-bottom: 1rem;
 }
 
 .footer-top-right{

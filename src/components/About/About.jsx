@@ -61,8 +61,8 @@ function About() {
                     <div className="about-skill"><p>HTML & CSS</p> <hr style={{width:"50%"}}/></div>
                     <div className="about-skill"><p>React JS</p> <hr style={{width:"60%"}}/></div>
                     <div className="about-skill"><p>Javascript</p> <hr style={{width:"55%"}}/></div>
-                    <div className="about-skill"><p>Next JS</p> <hr style={{width:"50%"}}/></div>
-                    <div className="about-skill"><p>GitLab CI/CD</p> <hr style={{width:"53%"}}/></div>
+                    <div className="about-skill"><p>Node JS</p> <hr style={{width:"30%"}}/></div>
+                    <div className="about-skill"><p>GitLab CI/CD</p> <hr style={{width:"43%"}}/></div>
                 </div>
             </div>
         </div>
