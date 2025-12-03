@@ -2,6 +2,7 @@ import React from 'react'
 import './Footer.css'
 import footer_logo from '../../assets/logo.png'
 import user_icon from '../../assets/user_icon.svg'
+import profile_img from '../../assets/profile_img.jpg'
 
 const Footer = () => {
   return (
@@ -24,7 +25,7 @@ const Footer = () => {
       </div>
      <hr />
      <div className="footer-bottom">
-     <div className="footer-bottom-left">copyright 2025 Francis Kenne All rights</div>
+     <div className="footer-bottom-left">©copyright 2025 Francis Kenne All rights</div>
      <div className="footer-bottom-right">
         <p>Termes et Servives</p>
         <p>Privacy Policy</p>

@@ -1,0 +1,76 @@
+/* LogosScroll.css */
+.logos-scroll-container {
+  padding: 2rem 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Styles communs pour les deux lignes */
+.marquee-top,
+.marquee-bottom {
+  padding: 1rem 0;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4rem;
+  transition: all 0.3s ease;
+}
+
+.logo-item img {
+  height: 60px;
+  width: auto;
+  filter: grayscale(30%);
+  transition: all 0.3s ease;
+}
+
+.logo-item span {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.logo-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.logo-item:hover span {
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-item img {
+    height: 30px;
+  }
+  
+  .logo-item {
+    margin: 0 1.5rem;
+  }
+  
+  .logos-scroll-container {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-item img {
+    height: 25px;
+  }
+  
+  .logo-item {
+    margin: 0 1rem;
+  }
+  
+  .logo-item span {
+    font-size: 0.7rem;
+  }
+}
