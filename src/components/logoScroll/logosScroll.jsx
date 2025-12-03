@@ -1,6 +1,6 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
-import './LogosScroll.css';
+import './logosScroll.css';
 
 const LogosScroll = () => {
   const logos = [
