@@ -3,15 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 170px;
-    position: fixed; /* ← AJOUTÉ */
+    margin: 20px 140px;
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* ← AJOUTÉ */
-    padding: 15px 70px; /* ← AJOUTÉ pour l'espacement */
-    transition: all 0.4s ease; /* ← AJOUTÉ pour animations */
-    background: transparent; /* ← Fond transparent par défaut */
+    z-index: 1000; 
+    padding: 15px 70px; 
+    transition: all 0.4s ease; 
+    background: transparent;
 }
 
 .nav-connect img{

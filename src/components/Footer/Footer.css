@@ -23,13 +23,13 @@
 .footer-top-right{
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 10px;
 }
 
 .footer-email-input{
     display: flex;
-    gap: 30px;
-    padding: 20px 30px;
+    gap: 20px;
+    padding: 10px 30px;
     border-radius: 50px;
     background: #32323b;
 }
@@ -45,9 +45,9 @@
 
 .footer-subscribe{
     font-size: 20px;
-    padding: 22px 50px;
+    padding: 10px 40px;
     border-radius: 50px;
-    background: linear-gradient(270deg, #DF8908 -5.09%, #B415FF);
+    border: 1px solid #ffffff;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -64,6 +64,7 @@
     margin-bottom: 50px;
 }
 
-.footer-subscribe:hover{
-    transform: scale(1.05);
+.footer-subscribe:active{
+    transform: scale(0.95);
 }
+

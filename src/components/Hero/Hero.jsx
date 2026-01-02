@@ -69,7 +69,7 @@ function Hero() {
         <div className="hero-text">
           <h1>
             <span>Francis Kenne</span>,<br />
-            Frontend Developer<br />
+            Développeur Web<br />
             basé en France.
           </h1>
           <p>

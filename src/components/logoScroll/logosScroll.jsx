@@ -11,7 +11,8 @@ const LogosScroll = () => {
     { name: 'Typescript', src: '/logos/typescript_plain_logo.webp' },
     { name: 'Illustrator', src: '/logos/ai_logo.png' },
     { name: 'Figma', src: '/logos/figma.png' },
-    { name: 'Tailwind CSS', src: '/logos/Tailwind_CSS_Logo.svg.png' }
+    { name: 'Tailwind CSS', src: '/logos/Tailwind_CSS_Logo.svg.png' },
+    { name: 'Terraform', src: '/logos/terraform.png' }
   ];
 
   const logo2 = [
@@ -22,7 +23,8 @@ const LogosScroll = () => {
     { name: 'Redux', src: '/logos/redux.png' },
     { name: 'Github', src: '/logos/github-logo.png' },
     { name: 'Sass', src: '/logos/logo_sass-6.png' },
-    { name: 'Confluence', src: '/logos/confluence.png' }
+    { name: 'Confluence', src: '/logos/confluence.png' },
+    { name: 'Photoshop', src: '/logos/photoshop.png' }
   ];
 
   return (
