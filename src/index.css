@@ -6,6 +6,8 @@
   box-sizing: border-box;
 }
 
+
+
 body{
   font-family: "Outfit", sans-serif;
   background-color: rgb(9, 1, 32);
@@ -14,9 +16,7 @@ body{
   scroll-behavior: smooth;
 }
 
-h1{
-  font-size: 60px !important;
-}
+
 
 a{
   text-decoration: none;

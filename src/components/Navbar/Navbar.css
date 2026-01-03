@@ -1,42 +1,41 @@
-/* Navbar.css corrigé */
+/* --- Styles de Base --- */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* Calcul de la largeur : 100% moins le cumul des marges (140px * 2) */
+    width: calc(100% - 280px); 
     margin: 20px 140px;
+    padding: 15px 70px;
     position: fixed; 
     top: 0;
     left: 0;
-    right: 0;
     z-index: 1000; 
-    padding: 15px 70px; 
     transition: all 0.4s ease; 
     background: transparent;
+    box-sizing: border-box;
 }
 
-.nav-connect img{
-    width: 25px !important;
+/* --- Logo --- */
+.logo-scroll {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
 }
 
-/* État quand on scroll */
+/* --- État Scrolled --- */
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0; /* ← IMPORTANT: reset margin en scroll */
-    padding: 10px 170px; /* ← Padding réduit en scroll */
+    margin: 0; 
+    width: 100%; /* Reprend toute la largeur au scroll */
+    padding: 10px 140px; 
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.navbar img{
-    width: 100%;
-    max-width: 170px;
-}
-
-
-
-/* Menu principal */
+/* --- Menu de Navigation --- */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -45,17 +44,18 @@
     font-size: 20px;
 }
 
-/* Liens de navigation */
 .nav-menu li {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
     cursor: pointer;
+    position: relative;
 }
 
 .anchor-link {
     text-decoration: none;
-    color: inherit;
+    color: white;
     transition: color 0.3s ease;
 }
 
@@ -68,11 +68,13 @@
     padding: 8px 0;
 }
 
-.underline-logo{
-    width: 50px !important;
+/* Image de soulignement (underline) */
+.underline-logo {
+    width: 40px !important;
+    height: auto;
 }
 
-/* Bouton Connect */
+/* --- Bouton Connect --- */
 .nav-connect {
     display: flex;
     align-items: center;
@@ -85,7 +87,11 @@
     color: white;
     font-size: 16px;
     font-weight: 500;
-    gap: 8px;
+    gap: 10px;
+}
+
+.nav-connect img {
+    width: 22px !important;
 }
 
 .nav-connect:hover {
@@ -93,64 +99,68 @@
     box-shadow: 0 5px 15px rgba(185, 35, 225, 0.4);
 }
 
-/* Soulignement actif */
-.nav-menu li img {
-    display: flex;
-    margin: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Menu Mobile */
+/* --- Menu Mobile (Hamburger) --- */
 .menu-toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    gap: 6px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 5px;
-    z-index: 1001; /* ← Au-dessus du menu */
+    z-index: 1001;
 }
 
 .menu-toggle span {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background: white;
-    margin: 3px 0;
+    border-radius: 10px;
     transition: 0.3s;
 }
 
-/* Overlay pour fermer le menu en cliquant à côté */
+/* --- Overlay --- */
 .menu-overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
     z-index: 999;
 }
 
-/* RESPONSIVE DESIGN */
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
 @media screen and (max-width: 1200px) {
     .navbar {
         margin: 20px 50px;
-        padding: 15px 50px;
+        width: calc(100% - 100px);
+        padding: 15px 40px;
     }
     
     .navbar.scrolled {
+        margin: 0;
+        width: 100%;
         padding: 10px 50px;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 968px) {
     .navbar {
-        margin: 20px 30px;
+        margin: 0 !important; 
         padding: 15px 30px;
+        width: 100% !important;
+        border-radius: 0;
     }
     
     .navbar.scrolled {
         padding: 10px 30px;
+        background: rgba(10, 10, 10, 0.95);
     }
     
     .menu-toggle {
@@ -163,46 +173,39 @@
         right: -100%;
         width: 300px;
         height: 100vh;
-        background: rgba(31, 31, 31, 0.95);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: #0f0f0f;
         flex-direction: column;
         justify-content: center;
-        gap: 40px;
-        transition: right 0.3s ease;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
     
     .nav-menu.active {
         right: 0;
     }
     
-    /* Afficher l'overlay quand le menu est ouvert */
-    .nav-menu.active + .menu-overlay {
-        display: block;
-    }
-    
     .nav-connect {
         display: none;
     }
     
-    /* Animation hamburger -> croix */
+    /* Animation Hamburger -> Croix */
     .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: translateY(9px) rotate(45deg);
     }
-    
     .menu-toggle.active span:nth-child(2) {
         opacity: 0;
+        transform: translateX(-10px);
     }
-    
     .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: translateY(-9px) rotate(-45deg);
     }
 }
 
 @media screen and (max-width: 480px) {
     .navbar {
-        margin: 20px 15px;
         padding: 15px 20px;
     }
     
@@ -212,6 +215,10 @@
     
     .nav-menu {
         width: 100%;
+    }
+
+    .logo-scroll {
+        max-width: 130px;
     }
 }
 

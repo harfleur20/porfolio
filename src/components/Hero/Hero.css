@@ -210,7 +210,7 @@
   }
   
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -254,16 +254,13 @@
   }
   
   .hero h1 {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
   
   .hero p {
     font-size: 1.1rem;
   }
   
-  .hero-image img {
-    max-width: 300px;
-  }
   
   .hero-connect, .hero-resume {
     padding: 14px 28px;

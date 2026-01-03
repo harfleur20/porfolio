@@ -86,6 +86,7 @@
      width: 100%;
      justify-content: space-around;
      margin-bottom: 80px;
+     margin-top: 50px;
 }
 
 .about-achievement{
@@ -123,8 +124,37 @@
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1200px) {
+
+    .hero-content{
+        margin-top: 50px;
+    }
+
+    .hero-image img{
+        width: 400px;
+    }
+    
+    .hero-text{
+        margin-top: -25px;
+        margin-bottom: 20px;
+    }
+
     .about {
         padding: 0 50px;
+    }
+
+    .about-left img{
+        width: 500px;
+    }
+
+    .about-right{
+        margin-top: -30px;
+        display: flex;
+        padding: 0 40px;
+    }
+
+    .about-para{
+        
+        text-align: center;
     }
     
     .about-sections {
@@ -158,6 +188,7 @@
     .about-achievements {
         flex-wrap: wrap;
         gap: 30px;
+        margin-top: 80px;
     }
 }
 
