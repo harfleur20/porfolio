@@ -1,4 +1,4 @@
-.about{
+.about {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,19 +7,19 @@
     padding: 0 150px;
 }
 
-.about-title{
+.about-title {
     position: relative;
     margin-bottom: 50px;
     margin-top: 50px;
 }
 
-.about-title h1{
-  padding: 0 30px;
-  font-size: 70px;
-  font-weight: 600;
+.about-title h1 {
+    padding: 0 30px;
+    font-size: 70px;
+    font-weight: 600;
 }
 
-.about-title img{
+.about-title img {
     position: absolute;
     top: 30px;
     left: 400px;
@@ -27,24 +27,24 @@
     width: 150px;
 }
 
-.about-left img{
-  width: 100%;
-  max-width: 750px;
+.about-left img {
+    width: 100%;
+    max-width: 750px;
 }
 
-.about-sections{
+.about-sections {
     display: flex;
     gap: 50px;
     margin-bottom: 40px;
 }
 
-.about-right{
+.about-right {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-.about-para{
+.about-para {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -53,26 +53,26 @@
     max-width: 950px;
 }
 
-.about-skills{
+.about-skills {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.about-skill{
+.about-skill {
     display: flex;
     gap: 50px;
     align-items: center;
     transition: 0.3s;
 }
 
-.about-skill p{
+.about-skill p {
     min-width: 150px;
     font-size: 24px;
     font-weight: 500;
 }
 
-.about-skill hr{
+.about-skill hr {
     outline: none;
     border: none;
     width: 50%;
@@ -81,15 +81,15 @@
     background: linear-gradient(264deg, #FF8A00 -5.09%, #B415FF 106.28%);
 }
 
-.about-achievements{
-     display: flex;
-     width: 100%;
-     justify-content: space-around;
-     margin-bottom: 80px;
-     margin-top: 50px;
+.about-achievements {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 80px;
+    margin-top: 50px;
 }
 
-.about-achievement{
+.about-achievement {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,62 +98,39 @@
     margin-top: -70px;
 }
 
-.about-achievement h1{
+.about-achievement h1 {
     font-size: 50px;
     font-weight: 700;
-    /* background: linear-gradient(264deg, #FF8A00 -5.09%, #B415FF 106.28%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
 }
 
-.about-achievement p{
+.about-achievement p {
     font-size: 22px;
     font-weight: 500;
 }
 
-.about-skill:hover{
+.about-skill:hover {
     transform: scale(1.05);
     transition: 0.3s;
 }
 
-.about-achievement:hover{
+.about-achievement:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
 
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 1200px) {
-
-    .hero-content{
-        margin-top: 50px;
-    }
-
-    .hero-image img{
-        width: 400px;
-    }
-    
-    .hero-text{
-        margin-top: -25px;
-        margin-bottom: 20px;
-    }
-
     .about {
         padding: 0 50px;
     }
 
-    .about-left img{
-        width: 500px;
-    }
-
-    .about-right{
+    .about-right {
         margin-top: -30px;
         display: flex;
         padding: 0 40px;
     }
 
-    .about-para{
-        
+    .about-para {
         text-align: center;
     }
     
@@ -163,6 +140,11 @@
     
     .about-title h1 {
         font-size: 60px;
+    }
+
+    /* Correction ici : on garde une largeur visible */
+    .about-skill hr {
+        width: 50%;
     }
 }
 
@@ -180,8 +162,10 @@
         font-size: 55px;
     }
     
+    /* Correction position image titre */
     .about-title img {
-        left: 150px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 130px;
     }
     
@@ -202,8 +186,10 @@
         font-size: 45px;
     }
     
+    /* Image centrée pour mobile */
     .about-title img {
-        left: 120px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 110px;
         top: 25px;
     }
@@ -212,26 +198,44 @@
         font-size: 22px;
     }
     
+    /* MAINTIEN DE L'ALIGNEMENT HORIZONTAL DES SKILLS */
     .about-skill {
-        flex-direction: column;
-        gap: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: row; 
+        gap: 20px;
+        /* width: 100%; */
     }
     
     .about-skill p {
-        min-width: auto;
-        font-size: 22px;
+        min-width: 100px; /* Réduit pour mobile */
+        font-size: 18px;
+        text-align: left;
     }
     
     .about-skill hr {
-        width: 100% !important;
+        flex-grow: 1; 
+        /* width: auto !important;  */
+        height: 6px; /* Légèrement plus fine pour mobile */
+    
+    }
+
+    .about-achievements{
+        margin-top: 5px ;
+    }
+
+    .about-achievement{
+        margin-top: -10px;
+        margin-bottom: -30px;
     }
     
     .about-achievement h1 {
-        font-size: 50px;
+        font-size: 35px !important;
     }
     
     .about-achievement p {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
@@ -246,26 +250,25 @@
     }
     
     .about-title img {
-        left: 80px;
         width: 90px;
-        top: 20px;
     }
     
     .about-para {
-        font-size: 20px;
+        font-size: 18px;
         gap: 15px;
     }
     
     .about-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         gap: 30px;
-    }
-    
-    .about-skills {
-        gap: 15px;
+        padding: 0 15px;
     }
     
     .about-skill p {
-        font-size: 20px;
+        min-width: 100px; 
+        font-size: 18px;
     }
     
     .about-achievements {
@@ -275,21 +278,16 @@
     }
     
     .about-achievement h1 {
-        font-size: 45px;
-    }
-    
-    .about-achievement p {
-        font-size: 18px;
+        font-size: 40px;
     }
 }
 
-/* === FOND SPATIAL AMÉLIORÉ - VISIBILITÉ AUGMENTÉE === */
+/* === FOND SPATIAL AMÉLIORÉ === */
 .about {
     position: relative;
     overflow: hidden;
 }
 
-/* Fond spatial dimensionnel animé - VISIBILITÉ AUGMENTÉE */
 .about::before {
     content: '';
     position: absolute;
@@ -306,7 +304,6 @@
     z-index: -2;
 }
 
-/* Grille dimensionnelle animée - VISIBILITÉ AUGMENTÉE */
 .about::after {
     content: '';
     position: absolute;
@@ -318,17 +315,10 @@
         linear-gradient(90deg, transparent 95%, rgba(255,255,255,0.09) 100%),
         linear-gradient(0deg, transparent 95%, rgba(255,255,255,0.09) 100%);
     background-size: 50px 50px;
-    /* animation: grid-move 20s linear infinite; */
     z-index: -1;
     opacity: 0.4;
 }
 
-@keyframes grid-move {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
-}
-
-/* Conteneur des étoiles - VISIBILITÉ AUGMENTÉE */
 .about-stars {
     position: absolute;
     top: 0;
@@ -345,7 +335,7 @@
     border-radius: 50%;
     animation: star-twinkle var(--duration) infinite ease-in-out;
     opacity: 0;
-    box-shadow: 0 0 8px rgba(28, 18, 18, 0.5);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes star-twinkle {
@@ -359,7 +349,6 @@
     }
 }
 
-/* Nébuleuses supplémentaires pour plus de profondeur */
 .about-nebula {
     position: absolute;
     border-radius: 50%;
@@ -375,7 +364,6 @@
     background: radial-gradient(circle, rgba(218, 124, 37, 0.3), transparent);
     top: 10%;
     left: 10%;
-    animation-delay: 0s;
 }
 
 .about-nebula-2 {
@@ -384,7 +372,6 @@
     background: radial-gradient(circle, rgba(185, 35, 225, 0.3), transparent);
     bottom: 10%;
     right: 10%;
-    animation-delay: -5s;
 }
 
 @keyframes nebula-float {
