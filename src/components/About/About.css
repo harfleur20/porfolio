@@ -185,6 +185,10 @@
     .about-title h1 {
         font-size: 45px;
     }
+
+      .about-left img{
+        width: 280px;
+    }
     
     /* Image centrée pour mobile */
     .about-title img {
@@ -194,8 +198,8 @@
         top: 25px;
     }
     
-    .about-para {
-        font-size: 22px;
+    .about-para p{
+        font-size: 18px;
     }
     
     /* MAINTIEN DE L'ALIGNEMENT HORIZONTAL DES SKILLS */
@@ -248,7 +252,8 @@
         font-size: 35px;
         padding: 0 20px;
     }
-    
+
+  
     .about-title img {
         width: 90px;
     }
