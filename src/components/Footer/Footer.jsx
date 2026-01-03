@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
         </div>
       </div>
-     <hr />
+     <hr className='barre' />
      <div className="footer-bottom">
      <div className="footer-bottom-left">©copyright 2025 Francis Kenne All rights</div>
      <div className="footer-bottom-right">
