@@ -1,43 +1,21 @@
 .services {
-    padding: 80px 100px;
-    position: relative;
-    /* background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); */
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 10%;
+    position: relative;
+    min-height: 100vh;
     overflow: hidden;
+    background: #090120;
 }
 
-/* Fond Galaxy Animé */
-.services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(ellipse at 20% 20%, rgba(112, 18, 144, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(50, 8, 86, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 40% 60%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
-    z-index: -2;
-    animation: galaxy-pulse 20s ease-in-out infinite;
-}
-
-@keyframes galaxy-pulse {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
-}
-
-/* Étoiles en fond */
+/* --- Effets de fond (Stars) --- */
 .services-stars {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -50,201 +28,148 @@
 }
 
 @keyframes star-twinkle {
-    0%, 100% { 
-        opacity: 0.1;
-        transform: scale(0.3);
-    }
-    50% { 
-        opacity: 0.8;
-        transform: scale(1);
-    }
+    0%, 100% { opacity: 0.1; transform: scale(0.3); }
+    50% { opacity: 0.8; transform: scale(1); }
 }
 
+/* --- Titre --- */
 .services-title {
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     text-align: center;
+    z-index: 2;
 }
 
 .services-title h1 {
-    padding: 0 30px;
-    font-size: 70px;
+    font-size: 65px !important;
     font-weight: 600;
     color: white;
 }
 
-.services-title img {
-    position: absolute;
-    top: 30px;
-    left: 370px;
-    transform: translateX(-50%);
-    z-index: -1;
-    width: 150px;
-    opacity: 1;
-}
-
+/* --- Container Grille --- */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     width: 100%;
-    max-width: 1200px;
-    perspective: 1000px;
+    max-width: 1100px;
+    z-index: 2;
 }
 
-/* Carte rotative - ANIMATION RALENTIE */
+/* --- La Carte (Compacte) --- */
 .services-card {
     position: relative;
-    width: 330px;
-    height: 400px;
-    transform-style: preserve-3d;
-    transition: transform 1.2s cubic-bezier(0.25, 0.36, 0.35, 0.84);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    min-height: 300px; /* Taille réduite */
+    transition: all 0.4s ease;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .services-card:hover {
-    transform: rotateY(180deg);
+    transform: translateY(-10px);
+    border-color: #B923E1;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-.services-card.active {
-    transform: rotateY(180deg);
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    transition: 0.4s ease;
 }
 
-/* Faces de la carte */
-.card-front,
 .card-back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    border-radius: 20px;
-    padding: 40px 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #160a3a 0%, #090120 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
 }
 
-/* Face avant - EFFET GLASS */
-.card-front {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+/* Effet de bascule au survol (Simple Opacity/Visibility) */
+.services-card:hover .card-front {
+    opacity: 0;
+    transform: scale(0.9);
 }
 
-.service-number h3 {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
+.services-card:hover .card-back {
+    opacity: 1;
+    visibility: visible;
 }
 
+/* --- Icones et Logos --- */
 .service-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    background: rgba(134, 82, 148, 0.1);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    padding: 15px;
+    padding: 12px;
+    margin-bottom: 10px;
 }
 
 .service-icon-back {
-    width: 80px;
-    height: 80px;
-    backdrop-filter: blur(10px);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #DA7C25 0%, #B923E1 100%);
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    position: relative;
-}
-
-.service-icon-back::before {
-    content: "●";
-    position: absolute;
-    font-size: 80px;
-    font-weight: bold;
-    background: linear-gradient(264deg, #FF8A00 -5.09%, #B415FF 106.28%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-}
-
-.service-image img{
-    width: 100%;
-    max-width: 30px;
-    margin-top: 30px;
+    padding: 12px;
+    margin-bottom: 10px;
 }
 
 .service-logo {
     width: 100%;
-    height: 100%;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }
 
-.icon-placeholder {
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
+.service-image img {
+    width: 25px;
+    margin-top: 15px;
+    opacity: 0.5;
 }
 
-.card-front h2 {
-    font-size: 24px;
+/* --- Textes --- */
+.services-card h2 {
+    font-size: 22px;
     font-weight: 600;
     color: white;
-    margin-bottom: 15px;
 }
 
 .service-preview p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-/* Face arrière */
-.card-back {
-    background: linear-gradient(267deg, #0f0c29 5.09%, #24243e 100.06%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transform: rotateY(180deg);
-    color: white;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.card-back .service-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
-}
-
-.card-back .service-number .card-front{
-    display: none;
-}
-
-.card-back h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: white;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
 }
 
 .service-details {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 30px;
+    gap: 8px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -252,105 +177,67 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    color: #eee;
+    text-align: left;
 }
 
 .feature-bullet {
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(135deg, #DA7C25 0%, #B923E1 100%);
+    width: 5px;
+    height: 5px;
+    background: #DA7C25;
     border-radius: 50%;
     flex-shrink: 0;
 }
 
+/* --- Bouton CTA --- */
 .cta-button {
     background: linear-gradient(135deg, #DA7C25 0%, #B923E1 100%);
     border: none;
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 600;
+    margin-top: -12px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
+    gap: 8px;
+    transition: 0.3s;
 }
 
-.cta-button img{
-    width: 15px;
+.cta-button img {
+    width: 12px;
 }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(185, 35, 225, 0.4);
-}
+/* ============================================================
+   RESPONSIVE SERVICES
+   ============================================================ */
 
-/* RESPONSIVE */
-@media screen and (max-width: 968px) {
-    .services {
-        padding: 60px 30px;
-    }
-    
-    .services-title h1 {
-        font-size: 50px;
-    }
-    
-    .services-container {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
+@media screen and (max-width: 1024px) {
+    .services { padding: 60px 5%; }
+    .services-title h1 { font-size: 40px !important; }
+    .services-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
 @media screen and (max-width: 768px) {
-    .services {
-        padding: 60px 20px;
-    }
-    
-    .services-title h1 {
-        font-size: 40px;
-    }
+    .services { padding: 50px 20px; }
+    .services-title h1 { font-size: 35px; }
     
     .services-container {
-        grid-template-columns: 1fr;
-        max-width: 400px;
+        grid-template-columns: 1fr; 
+        max-width: 350px; 
     }
-    
-    .services-container {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 20px;
-        padding-bottom: 20px;
-    }
-    
+
     .services-card {
-        flex: 0 0 85%;
-        scroll-snap-align: start;
+        min-height: 300px; 
     }
+
     
-    .carousel-indicators {
-        display: flex;
-    }
 }
 
 @media screen and (max-width: 480px) {
-    .services {
-        padding: 40px 15px;
-    }
-    
-    .services-title h1 {
-        font-size: 32px;
-    }
-    
-    .services-card {
-        height: 350px;
-    }
-    
-    .card-front,
-    .card-back {
-        padding: 30px 20px;
-    }
+    .services-title h1 { font-size: 30px; }
+    .services-card { padding: 20px; }
 }

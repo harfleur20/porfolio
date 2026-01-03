@@ -1,4 +1,8 @@
-.contact{
+/* ============================================================
+   SECTION CONTACT - DESIGN D'ORIGINE CONSERVÉ
+   ============================================================ */
+
+.contact {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,45 +10,40 @@
     gap: 40px;
 }
 
-.contact-title{
+.contact-title {
     position: relative;
     margin-bottom: 50px;
 }
 
-.contact-title h1{
+.contact-title h1 {
     padding: 0px 30px;
     font-size: 70px;
     font-weight: 600;
 }
 
-.contact-title img{
+.contact-title img {
     position: absolute;
     bottom: 8px;
     right: 20px;
     width: 140px;
     z-index: -1;
-
 }
 
-.contact-right{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex: 1;
-}
-
-.contact-section{
+.contact-section {
     display: flex;
     gap: 50px;
+    width: 100%;
 }
 
-.contact-left{
+/* --- Colonne Gauche --- */
+.contact-left {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    flex: 1;
 }
 
-.contact-left h1{
+.contact-left h1 {
     font-size: 80px;
     font-weight: 500;
     background: linear-gradient(270deg, #DF8908 80%, #B415FF 100%);
@@ -53,45 +52,49 @@
     -webkit-text-fill-color: transparent;
 }
 
-.contact-left p{
+.contact-left p {
     max-width: 550px;
     color: #d8d8d8;
     font-size: 20px;
 }
 
-.contact-details{
-    display:flex;
+.contact-details {
+    display: flex;
     flex-direction: column;
     gap: 20px;
     color: #d8d8d8;
     font-size: 22px;
 }
 
-.contact-detail{
+.contact-detail {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.contact-detail img{
-   width: 30px;
+
+.contact-detail img {
+    width: 30px;
 }
 
-.contact-right{
+/* --- Colonne Droite (Formulaire) --- */
+.contact-right {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 30px;
+    flex: 1;
 }
 
-.contact-right label{
+.contact-right label {
     font-size: 22px;
     font-weight: 500;
     color: #d8d8d8;
 }
 
-.contact-right input{
+.contact-right input {
     border: none;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     height: 78px;
     padding-left: 20px;
     border-radius: 4px;
@@ -101,18 +104,22 @@
     color: #A0A0A0;
 }
 
-.contact-right textarea{
+.contact-right textarea {
     border: none;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     padding: 20px;
     border-radius: 4px;
     font-family: outfit;
     font-size: 20px;
     background: #32323C;
     color: #A0A0A0;
+    /* Empêche le redimensionnement manuel par l'utilisateur */
+    resize: none; 
+    min-height: 250px; /* Optionnel : définit une hauteur par défaut */
 }
 
-.contact-submit{
+.contact-submit {
     border: none;
     color: white;
     border-radius: 50px;
@@ -124,6 +131,114 @@
     transition: 0.3s;
 }
 
-.contact-submit:active{
+.contact-submit:active {
     transform: scale(0.95);
+}
+
+/* --- Style des Inputs et Textarea au repos --- */
+.contact-right input, 
+.contact-right textarea {
+    border: 2px solid transparent; /* On prépare une bordure invisible */
+    width: 100%;
+    max-width: 700px;
+    border-radius: 4px;
+    font-family: outfit;
+    font-size: 20px;
+    background: #32323C;
+    color: #A0A0A0;
+    transition: all 0.3s ease; /* Transition pour la douceur */
+}
+
+/* --- STYLE AU CLIC (FOCUS) --- */
+
+.contact-right input:focus, 
+.contact-right textarea:focus {
+    outline: none; 
+    border: 1px solid #DF8908; 
+    background: #3b3b46; 
+    box-shadow: 0 0 15px rgba(223, 137, 8, 0.2); 
+    color: white;
+}
+
+/* --- Bouton Submit (État normal) --- */
+.contact-submit {
+    border: none;
+    color: white;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #DF8908 -5.09%, #B415FF 100%);
+    font-size: 22px;
+    padding: 18px 40px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease; /* Transition fluide pour tous les effets */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Effet HOVER (Survol) --- */
+.contact-submit:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(180, 21, 255, 0.3); 
+    filter: brightness(1.1); 
+}
+
+/* --- Effet ACTIVE (Clic) --- */
+.contact-submit:active {
+    transform: translateY(-2px) scale(0.95);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN CONTACT
+   ============================================================ */
+
+@media screen and (max-width: 1200px) {
+    .contact {
+        margin: 80px 50px;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-right {
+        align-items: center;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        margin: 60px 20px;
+    }
+
+    .contact-title h1 {
+        font-size: 40px;
+    }
+
+    .contact-left h1 {
+        font-size: 45px;
+    }
+
+    .contact-details {
+        font-size: 18px;
+    }
+
+    .contact-right input, 
+    .contact-right textarea {
+        font-size: 16px;
+    }
+
+    .contact-submit {
+        width: 100%;
+        max-width: 300px;
+    }
 }

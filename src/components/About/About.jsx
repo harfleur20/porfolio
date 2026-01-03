@@ -54,7 +54,7 @@ function About() {
             </div>
             <div className="about-right">
                 <div className="about-para">
-                  <p>Je suis un développeur Fullstack, UI/UX Designer & Graphiste, capable de concevoir de l'identité visuelle à la conception d' d'applications web interactives et responsives.</p>
+                  <p>Je suis un développeur Fullstack, UI/UX Designer & Graphiste, capable de concevoir de l'identité visuelle à la conception d'applications web interactives et responsives.</p>
                   <p>Spécialisé en React, JavaScript et technologies web modernes, je transforme les maquettes en expériences numériques fluides.</p>
                 </div>
                 <div className="about-skills">
