@@ -62,7 +62,7 @@ function Hero() {
       <div className="hero-content">
         {/* Image à gauche */}
         <div className="hero-image">
-          <img src={fkpic} alt="Alex Bennett - Frontend Developer" />
+          <img src={fkpic} alt="Francis Kenne - Frontend Developer" />
         </div>
 
         {/* Texte à droite */}
@@ -70,7 +70,7 @@ function Hero() {
           <h1>
             <span>Francis Kenne</span>,<br />
             Développeur Web<br />
-            basé en France.
+            UI/UX Designer.
           </h1>
           <p>
             Stage | Alternance | Freelance
