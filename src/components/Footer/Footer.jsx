@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <hr className='barre' />
       <div className="footer-bottom">
-        <div className="footer-bottom-left">©copyright 2025 Francis Kenne All rights reserved</div>
+        <div className="footer-bottom-left">©Copyright 2025 Francis Kenne All rights reserved</div>
         <div className="footer-bottom-right">
           <p className="footer-link">Termes et Services</p>
           <p className="footer-link">Privacy Policy</p>
