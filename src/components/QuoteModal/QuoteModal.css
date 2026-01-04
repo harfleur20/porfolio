@@ -1,0 +1,191 @@
+/* --- QuoteModal.css --- */
+
+/* L'arrière-plan sombre */
+.quote-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000; 
+    padding: 10px; 
+}
+
+/* La boîte du formulaire */
+.quote-modal-content {
+    background: #1f1e1c;
+    width: 90%;
+    max-width: 500px; /* Un peu plus étroit */
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease-out;
+
+    /* --- IMPORTANT POUR MOBILE --- */
+    max-height: 90vh; 
+    overflow-y: auto; 
+    scrollbar-width: thin; 
+    scrollbar-color: #B923E1 #1f1e1c;
+}
+
+/* Style de la scrollbar (Chrome/Safari) */
+.quote-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.quote-modal-content::-webkit-scrollbar-track {
+    background: #1f1e1c;
+}
+.quote-modal-content::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Bouton fermer */
+.quote-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: #515152;
+    border-radius: 50px;
+    cursor: pointer; 
+    font-size: 20px;
+    color: white;
+    opacity: 0.7;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.quote-modal-close:hover{
+    background-color: #a5a5a5;
+    transform: rotate(-90deg) scale(1.02);
+}
+
+/* Header */
+.quote-modal-header {
+    margin-bottom: 20px;
+    text-align: center; /* Centré c'est souvent plus joli sur mobile */
+}
+
+.quote-modal-header h2 {
+    font-size: 26px; /* Police réduite */
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.quote-modal-header p {
+    color: #bbb;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Formulaire */
+.quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement réduit entre les champs */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #ccc;
+    font-size: 13px; /* Label plus petit */
+    font-weight: 500;
+}
+
+/* Champs (Input, Select, Textarea) */
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 10px 12px; /* Padding interne réduit (Moins haut) */
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #2a2825;
+    color: white;
+    font-size: 15px; /* Texte lisible mais compact */
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #B923E1;
+}
+
+.form-group.row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group .half {
+    flex: 1;
+}
+
+/* Bouton d'envoi */
+.quote-submit-btn {
+    padding: 12px; /* Bouton moins gros */
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all 0.3s;
+}
+
+.quote-submit-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(185, 35, 225, 0.4);
+}
+
+/* --- OPTIMISATION MOBILE (Écrans < 600px) --- */
+@media (max-width: 600px) {
+    .quote-modal-content {
+        padding: 20px 15px; /* Marges latérales très fines */
+        width: 95%; /* Occupe presque toute la largeur */
+        max-height: 85vh; /* Laisse un peu de place en haut/bas */
+    }
+
+    .quote-modal-header h2 {
+        font-size: 22px; /* Titre plus petit */
+    }
+
+    /* On garde les inputs côte à côte si possible, sinon on empile */
+    /* Ici je choisis d'empiler pour éviter les inputs trop petits */
+    .form-group.row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-group input, 
+    .form-group select {
+        padding: 10px; /* Confortable pour le tactile mais compact */
+    }
+    
+    .quote-submit-btn {
+        font-size: 15px;
+        padding: 14px; /* Zone de clic facile */
+    }
+}
