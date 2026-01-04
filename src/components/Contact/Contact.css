@@ -188,7 +188,7 @@
     transform: translateY(-2px) scale(0.95);
 }
 
-/* ============================================================
+/* ================================
    RESPONSIVE DESIGN CONTACT
    ============================================================ */
 
@@ -217,11 +217,37 @@
 
 @media screen and (max-width: 768px) {
     .contact {
-        margin: 60px 20px;
+        margin: 60px 30px;
+    }
+
+    .contact-left h1{
+        font-size: 31px !important;
+    }
+
+    .contact-right input, .contact-right textarea{
+        height: 50px;
+    }
+
+    .contact-right label{
+        font-size: 18px;
+    }
+
+    .contact-left p{
+        font-size: 16px !important;
+    }
+
+    .contact-title{
+        margin-bottom: 5px;
     }
 
     .contact-title h1 {
-        font-size: 40px;
+        font-size: 30px;
+    }
+
+    .contact-title img {
+        width: 52px;
+        top: 20px;
+        right: 27px;
     }
 
     .contact-left h1 {
