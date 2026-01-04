@@ -217,13 +217,14 @@
 @media screen and (max-width: 968px) {
   .hero {
     padding: 80px 30px 50px;
-    min-height: auto;
+    min-height: 100vh;
   }
   
   .hero-content {
     flex-direction: column;
     text-align: center;
     gap: 40px;
+    margin-top: 50px;
   }
   
   .hero-text {
