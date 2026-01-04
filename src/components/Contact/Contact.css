@@ -213,6 +213,18 @@
         align-items: center;
         width: 100%;
     }
+
+      .footer-top-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-top-left p{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -241,13 +253,14 @@
     }
 
     .contact-title h1 {
-        font-size: 30px;
+        font-size: 32px;
+        text-align: center;
     }
 
     .contact-title img {
         width: 52px;
-        top: 20px;
-        right: 27px;
+        top: 60px;
+        right: 92px;
     }
 
     .contact-left h1 {

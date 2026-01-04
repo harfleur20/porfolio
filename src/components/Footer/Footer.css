@@ -64,11 +64,16 @@
     font-size: 18px;
     padding: 10px 40px;
     border-radius: 50px;
-    border: 1px solid #ffffff;
+    border: 1px solid #828282;
     cursor: pointer;
     transition: 0.3s;
     background: transparent;
-    color: white;
+    color: #828282;
+}
+
+.footer-subscribe:hover{
+    color: #d8d8d8;
+    border: 1px solid #d8d8d8;
 }
 
 .footer-bottom {
@@ -88,7 +93,7 @@
 }
 
 .footer-subscribe:active {
-    transform: scale(0.95);
+    background-color: #141734;
 }
 
 /* ============================================================
