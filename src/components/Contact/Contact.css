@@ -259,8 +259,9 @@
 
     .contact-title img {
         width: 52px;
-        top: 60px;
-        right: 92px;
+        top: 50px;
+        left: 55%;
+        transform: translateX(-50px);
     }
 
     .contact-left h1 {
