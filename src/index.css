@@ -38,6 +38,24 @@ body{
 }
 
 
+/* --- src/index.css --- */
+
+/* 1. Couleur de surbrillance du texte (Quand on sélectionne avec la souris) */
+::selection {
+  background: #901bb1; /* Votre violet signature */
+  color: #ffffff;      /* Texte en blanc */
+}
+
+/* Compatibilité Firefox */
+::-moz-selection {
+  background: #B923E1;
+  color: #ffffff;
+}
+
+input, textarea, select {
+  caret-color: #DA7C25; 
+}
+
 
 
 a{

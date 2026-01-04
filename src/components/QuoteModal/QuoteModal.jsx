@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './QuoteModal.css';
 import { IoClose } from "react-icons/io5";
+import { IoRocketSharp } from "react-icons/io5";
 
 const QuoteModal = ({ isOpen, onClose, initialService }) => {
   
-  // Initialisation du formulaire
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,8 +13,18 @@ const QuoteModal = ({ isOpen, onClose, initialService }) => {
     message: ''
   });
 
-  // État pour gérer le statut de l'envoi (chargement, succès, erreur)
   const [status, setStatus] = useState(""); 
+
+  // Liste des services
+  const servicesList = [
+    "IA & Automatisation",
+    "Conception d'un logo",
+    "Identité visuelle",
+    "UI/UX Design",
+    "Site Web",
+    "Application Web/Mobile",
+    "E-commerce"
+  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,10 +35,8 @@ const QuoteModal = ({ isOpen, onClose, initialService }) => {
     e.preventDefault();
     setStatus("sending");
 
-    // Récupération de la clé depuis le fichier .env
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-    // Préparation des données
     const objectToSend = {
       ...formData,
       access_key: accessKey
@@ -48,14 +56,10 @@ const QuoteModal = ({ isOpen, onClose, initialService }) => {
 
       if (res.success) {
         setStatus("success");
-        // Fermeture automatique après 3 secondes
         setTimeout(() => {
             onClose();
-            setStatus(""); // Reset du statut
-            // Reset du formulaire pour la prochaine fois
-            setFormData({
-                name: '', email: '', service: '', budget: '', message: ''
-            });
+            setStatus(""); 
+            setFormData({ name: '', email: '', service: '', budget: '', message: '' });
         }, 3000);
       } else {
         setStatus("error");
@@ -67,7 +71,6 @@ const QuoteModal = ({ isOpen, onClose, initialService }) => {
     }
   };
 
-  // Si le modal est fermé, on ne rend rien
   if (!isOpen) return null;
 
   return (
@@ -80,53 +83,54 @@ const QuoteModal = ({ isOpen, onClose, initialService }) => {
           <p>Parlez-moi de votre projet</p>
         </div>
 
-        {/* --- Affichage conditionnel : Succès ou Formulaire --- */}
         {status === "success" ? (
             <div className="success-message">
-                <h3>Message envoyé ! 🚀</h3>
+                <h3>Message envoyé ! <IoRocketSharp className='rocket'/></h3>
                 <p>Merci {formData.name}, je vous recontacterai très vite.</p>
             </div>
         ) : (
             <form onSubmit={handleSubmit} className="quote-form">
-            
-            <div className="form-group">
-                <label>Votre Nom</label>
-                <input type="text" name="name" required placeholder="Francis Kenne" value={formData.name} onChange={handleChange} />
-            </div>
-
-            <div className="form-group">
-                <label>Votre Email</label>
-                <input type="email" name="email" required placeholder="francis@exemple.com" value={formData.email} onChange={handleChange} />
-            </div>
-
-            <div className="form-group row">
-                <div className="half">
-                    <label>Service</label>
-                    <input type="text" name="service" value={formData.service} onChange={handleChange} />
+                <div className="form-group">
+                    <label>Votre Nom</label>
+                    <input type="text" name="name" required placeholder="Votre Nom" value={formData.name} onChange={handleChange} />
                 </div>
-                <div className="half">
-                    <label>Budget (Optionnel)</label>
-                    <select name="budget" value={formData.budget} onChange={handleChange}>
-                        <option value="">Sélectionner...</option>
-                        <option value="< 500€">&lt; 500€</option>
-                        <option value="500€ - 1500€">500€ - 1500€</option>
-                        <option value="1500€ - 5000€">1500€ - 5000€</option>
-                        <option value="> 5000€">&gt; 5000€</option>
-                    </select>
+                <div className="form-group">
+                    <label>Votre Email</label>
+                    <input type="email" name="email" required placeholder="email@exemple.com" value={formData.email} onChange={handleChange} />
                 </div>
-            </div>
+                
+                <div className="form-group row">
+                    <div className="half">
+                        <label>Service</label>
+                        <select name="service" required value={formData.service} onChange={handleChange}>
+                            <option value="">Choisir un service...</option>
+                            {servicesList.map((svc, index) => (
+                                <option key={index} value={svc}>{svc}</option>
+                            ))}
+                            <option value="Autre">Autre demande</option>
+                        </select>
+                    </div>
+                    {/* --- BUDGET RENDU OBLIGATOIRE --- */}
+                    <div className="half">
+                        <label>Budget</label>
+                        <select name="budget" required value={formData.budget} onChange={handleChange}>
+                            <option value="">Sélectionner...</option>
+                            <option value="< 500€">&lt; 500€</option>
+                            <option value="500€ - 1500€">500€ - 1500€</option>
+                            <option value="1500€ - 5000€">1500€ - 5000€</option>
+                            <option value="> 5000€">&gt; 5000€</option>
+                        </select>
+                    </div>
+                </div>
 
-            <div className="form-group">
-                <label>Détails du projet</label>
-                <textarea name="message" rows="4" required placeholder="Décrivez votre besoin..." value={formData.message} onChange={handleChange}></textarea>
-            </div>
-
-            <button type="submit" className="quote-submit-btn" disabled={status === "sending"}>
-                {status === "sending" ? "Envoi en cours..." : "Envoyer la demande"}
-            </button>
-
-            {status === "error" && <p className="error-text">Une erreur est survenue. Veuillez réessayer.</p>}
-
+                <div className="form-group">
+                    <label>Détails du projet</label>
+                    <textarea name="message" rows="4" required placeholder="Décrivez votre besoin..." value={formData.message} onChange={handleChange}></textarea>
+                </div>
+                <button type="submit" className="quote-submit-btn" disabled={status === "sending"}>
+                    {status === "sending" ? "Envoi en cours..." : "Envoyer la demande"}
+                </button>
+                {status === "error" && <p className="error-text">Une erreur est survenue.</p>}
             </form>
         )}
       </div>

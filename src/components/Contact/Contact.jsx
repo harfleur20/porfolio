@@ -7,38 +7,37 @@ import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
 
-  // État pour gérer le statut de l'envoi
   const [result, setResult] = useState(""); 
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Envoi en cours...");
     
+    // Création automatique de l'objet FormData à partir du formulaire
     const formData = new FormData(event.target);
 
+    // Ajout de la clé sécurisée depuis le .env
     formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
 
     try {
         const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
+            method: "POST",
+            body: formData
         });
 
         const data = await response.json();
 
         if (data.success) {
-        setResult("Message envoyé avec succès !");
-        event.target.reset(); // Vide le formulaire
-        
-        // Efface le message de succès après 5 secondes
-        setTimeout(() => setResult(""), 5000);
+            setResult("Message envoyé avec succès !");
+            event.target.reset(); 
+            setTimeout(() => setResult(""), 5000);
         } else {
-        console.error("Erreur", data);
-        setResult(data.message);
+            console.error("Erreur", data);
+            setResult(data.message);
         }
     } catch (error) {
         console.error("Erreur réseau", error);
-        setResult("Une erreur s'est produite. Vérifiez votre connexion.");
+        setResult("Une erreur s'est produite.");
     }
   };
 
@@ -51,36 +50,32 @@ const Contact = () => {
       <div className="contact-section">
         <div className="contact-left">
             <h1>Parlons-en</h1>
-            <p>Actuellement en Master spécialisé Expert en architecture et développement logiciel, je suis à la recherche d'un stage ou alternance en développement web.</p>
-            <p>Je suis disponible également pour des missions freelance. N'hésitez pas à me contacter !</p>
-            
+            <p>Je suis à la recherche d'un stage, <br />d'une alternance ou de missions freelance.</p>
             <div className="contact-details">
                 <div className="contact-detail">
-                    <img src={email_icon} alt="" /> <p>kennetsasse@gmail.com</p>
+                    <img src={email_icon} alt="" /> <p>info@franciskenne.me</p>
                 </div>
                 <div className="contact-detail">
-                    <img src={call_icon} alt="" /> <p>+33 7 53 10 97 74</p>
+                    <img src={call_icon} alt="" /> <p>+33 7 58 04 55 87</p>
                 </div>
                 <div className="contact-detail">
-                    <img src={location_icon} alt="" /> <p>Lyon, France</p>
+                    <img src={location_icon} alt="" /> <p>Limoges, Haute-vienne</p>
                 </div>
             </div>
         </div>
 
-        {/* --- FORMULAIRE DYNAMIQUE --- */}
         <form onSubmit={onSubmit} className="contact-right">
-            <label htmlFor="">Votre Nom</label>
+            <label>Votre Nom</label>
             <input type="text" placeholder='Entrez votre nom' name='name' required/>
             
-            <label htmlFor="">Votre Email</label>
+            <label>Votre Email</label>
             <input type="email" placeholder='Entrez votre email' name='email' required/>
             
-            <label htmlFor="">Ecrivez votre message ici</label>
+            <label>Ecrivez votre message ici</label>
             <textarea name="message" rows="8" placeholder='Entrez votre message' required></textarea>
             
             <button type='submit' className="contact-submit">Envoyer maintenant</button>
             
-            {/* Message de statut */}
             {result && <p className="contact-result">{result}</p>}
         </form>
       </div>
