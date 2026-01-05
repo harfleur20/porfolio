@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, } from 'react';
 import './QuoteModal.css';
 import { IoClose } from "react-icons/io5";
 import { IoRocketSharp } from "react-icons/io5";
@@ -12,6 +12,16 @@ const QuoteModal = ({ isOpen, onClose, initialService }) => {
     budget: '',
     message: ''
   });
+
+
+  useEffect(() => {
+  if (isOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'unset';
+  }
+  return () => { document.body.style.overflow = 'unset'; };
+}, [isOpen]);
 
   const [status, setStatus] = useState(""); 
 
