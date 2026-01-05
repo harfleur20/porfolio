@@ -10,7 +10,7 @@ import figma from '../../assets/figma.png'
 import dev from '../../assets/dev.png'
 import chatbot from '../../assets/chatbot.png'
 
-const Services = () => {
+const Services = ({setIsModalOpen}) => {
   const [activeCard, setActiveCard] = useState(null);
   const cardRefs = useRef([]);
 
@@ -146,7 +146,7 @@ const Services = () => {
                     </div>
                     
                     <div className="service-cta">
-                      <button className="cta-button">
+                      <button  onClick={() => setIsModalOpen(true)} className="cta-button">
                         Demander un devis
                         <img src={arrow_icon} alt="Arrow icon" />
                       </button>

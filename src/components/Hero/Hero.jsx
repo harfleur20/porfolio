@@ -1,14 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Hero.css";
 import fkpic from "../../assets/fk-pic.png";
-import QuoteModal from "../QuoteModal/QuoteModal"; // 1. Import du Modal
 
-function Hero() {
+
+function Hero({setIsModalOpen}) {
   const starsContainerRef = useRef(null);
 
-  // 2. État pour gérer l'ouverture du modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+  
   // Création des étoiles animées (Code conservé tel quel)
   useEffect(() => {
     const container = starsContainerRef.current;
@@ -79,7 +77,7 @@ function Hero() {
           </h1>
           <p>Stage | Alternance | Freelance</p>
           <div className="hero-action">
-            {/* 3. Ajout de l'événement onClick sur le bouton Devis */}
+            
             <button
               className="hero-connect"
               onClick={() => setIsModalOpen(true)}
@@ -98,12 +96,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* 4. Intégration du Modal en bas du composant */}
-      <QuoteModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        initialService="Projet Web & Design"
-      />
     </div>
   );
 }
