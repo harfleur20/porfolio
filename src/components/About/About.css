@@ -142,7 +142,6 @@
         font-size: 60px;
     }
 
-    /* Correction ici : on garde une largeur visible */
     .about-skill hr {
         width: 50%;
     }
@@ -162,7 +161,6 @@
         font-size: 55px;
     }
     
-    /* Correction position image titre */
     .about-title img {
         left: 50%;
         transform: translateX(-50%);
@@ -186,11 +184,10 @@
         font-size: 45px;
     }
 
-      .about-left img{
+    .about-left img {
         width: 280px;
     }
     
-    /* Image centrée pour mobile */
     .about-title img {
         left: 50%;
         transform: translateX(-50%);
@@ -198,38 +195,38 @@
         top: 25px;
     }
     
-    .about-para p{
+    .about-para p {
         font-size: 18px;
     }
     
-    /* MAINTIEN DE L'ALIGNEMENT HORIZONTAL DES SKILLS */
     .about-skill {
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: flex-start;
         flex-direction: row; 
         gap: 20px;
-        /* width: 100%; */
+        width: 100%; 
     }
     
     .about-skill p {
-        min-width: 100px; /* Réduit pour mobile */
+        min-width: 100px; 
         font-size: 18px;
         text-align: left;
     }
     
     .about-skill hr {
-        flex-grow: 1; 
-        /* width: auto !important;  */
-        height: 6px; /* Légèrement plus fine pour mobile */
-    
+
+        flex: 1 !important; 
+        width: auto !important; 
+        height: 6px;
+        margin: 0;
     }
 
-    .about-achievements{
-        margin-top: 5px ;
+    .about-achievements {
+        margin-top: 5px;
     }
 
-    .about-achievement{
+    .about-achievement {
         margin-top: -10px;
         margin-bottom: -30px;
     }
@@ -253,7 +250,6 @@
         padding: 0 20px;
     }
 
-  
     .about-title img {
         width: 90px;
     }
@@ -272,8 +268,8 @@
     }
     
     .about-skill p {
-        min-width: 100px; 
-        font-size: 18px;
+        min-width: 90px; 
+        font-size: 16px;
     }
     
     .about-achievements {
