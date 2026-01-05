@@ -18,13 +18,13 @@
 
 /* La boîte du formulaire */
 .quote-modal-content {
-    background: #1f1e1c;
+    background: #11101c;
     width: 90%;
     max-width: 500px; /* Un peu plus étroit */
     padding: 30px;
     border-radius: 15px;
     position: relative;
-    border: 1px solid #333;
+    border: 1px solid #7a5a78;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     animation: fadeIn 0.3s ease-out;
 
@@ -59,7 +59,7 @@
     right: 15px;
     width: 30px;
     height: 30px;
-    background-color: #515152;
+    background-color: #2c2c46;
     border-radius: 50px;
     cursor: pointer; 
     font-size: 20px;
@@ -70,18 +70,18 @@
 }
 
 .quote-modal-close:hover{
-    background-color: #a5a5a5;
+    background-color: #ff41d9;
     transform: rotate(-90deg) scale(1.02);
 }
 
 /* Header */
 .quote-modal-header {
     margin-bottom: 20px;
-    text-align: center; /* Centré c'est souvent plus joli sur mobile */
+    text-align: center; 
 }
 
 .quote-modal-header h2 {
-    font-size: 26px; /* Police réduite */
+    font-size: 30px; /* Police réduite */
     font-weight: 700;
     margin-bottom: 5px;
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
@@ -91,7 +91,7 @@
 }
 
 .quote-modal-header p {
-    color: #bbb;
+    color: #c6c6c6;
     font-size: 14px;
     margin: 0;
 }
@@ -100,14 +100,14 @@
 .quote-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacement réduit entre les champs */
+    gap: 15px; 
 }
 
 .form-group label {
     display: block;
     margin-bottom: 6px;
     color: #ccc;
-    font-size: 13px; /* Label plus petit */
+    font-size: 13px; 
     font-weight: 500;
 }
 
@@ -116,12 +116,12 @@
 .form-group textarea, 
 .form-group select {
     width: 100%;
-    padding: 10px 12px; /* Padding interne réduit (Moins haut) */
+    padding: 10px 12px; 
     border-radius: 8px;
     border: 1px solid #444;
-    background: #2a2825;
+    background: #191829;
     color: white;
-    font-size: 15px; /* Texte lisible mais compact */
+    font-size: 15px; 
     outline: none;
     font-family: 'Outfit', sans-serif;
 }
@@ -162,19 +162,17 @@
 
 /* --- src/components/QuoteModal/QuoteModal.css --- */
 
-/* Assurez-vous que le focus est bien violet et non bleu standard */
 .form-group input:focus, 
 .form-group textarea:focus,
 .form-group select:focus {
     border-color: #B923E1;
-    outline: none; /* Supprime le contour bleu par défaut de Chrome */
-    box-shadow: 0 0 0 2px rgba(185, 35, 225, 0.2); /* Ajoute une lueur violette */
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(185, 35, 225, 0.2); 
 }
 
 /* Style spécifique pour la liste déroulante */
 .form-group select {
-    appearance: none; /* Supprime le style par défaut du navigateur */
-    /* On réajoute une petite flèche personnalisée (optionnel mais joli) */
+    appearance: none;
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23B923E1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
     background-repeat: no-repeat;
     background-position: right 15px top 50%;
@@ -193,17 +191,16 @@
 /* --- OPTIMISATION MOBILE (Écrans < 600px) --- */
 @media (max-width: 600px) {
     .quote-modal-content {
-        padding: 20px 15px; /* Marges latérales très fines */
-        width: 95%; /* Occupe presque toute la largeur */
-        max-height: 85vh; /* Laisse un peu de place en haut/bas */
+        padding: 20px 15px; 
+        width: 95%; 
+        max-height: 85vh; 
     }
 
     .quote-modal-header h2 {
-        font-size: 22px; /* Titre plus petit */
+        font-size: 22px; 
     }
 
-    /* On garde les inputs côte à côte si possible, sinon on empile */
-    /* Ici je choisis d'empiler pour éviter les inputs trop petits */
+   
     .form-group.row {
         flex-direction: column;
         gap: 12px;
@@ -211,11 +208,11 @@
 
     .form-group input, 
     .form-group select {
-        padding: 10px; /* Confortable pour le tactile mais compact */
+        padding: 10px; 
     }
     
     .quote-submit-btn {
         font-size: 15px;
-        padding: 14px; /* Zone de clic facile */
+        padding: 14px; 
     }
 }

@@ -12,7 +12,7 @@ const SocialModal = ({ isOpen, onClose }) => {
     {
       name: 'GitHub',
       icon: GitLab, // Ceci est un string (chemin)
-      url: 'https://github.com/harfleur20/porfolio',
+      url: 'https://github.com/harfleur20?tab=repositories',
       color: '#d1d1d1ff'
     },
     {

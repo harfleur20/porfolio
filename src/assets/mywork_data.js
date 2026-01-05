@@ -36,6 +36,7 @@ import km10 from './KM/2.jpg'
 import preview from './academiecreatifs/ac1.jpg'
 import etrack from './e-track.jpg'
 import takecare from './takecare.jpg'
+import porfolio from './porfolio.jpg'
 
 const mywork_data = [
   {
@@ -92,20 +93,23 @@ const mywork_data = [
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: [elsa1,elsa2,elsa3]
   },
-  
-  {
-    w_img: preview,
-    w_name: "Académie des Créatifs",
-    w_categories: ["SiteWeb", "formation en live"],
+
+   {
+    w_img: porfolio,
+    w_name: "Francis Kenne - Porfolio",
+    w_categories: ["Siteweb", "Porfolio"],
     w_status: "online",
-    w_year: "2024",
-    w_type: "Projet client",
-    w_technologies: ["React JS", "UI/UX Design", "Javascript", "Tailwind css"],
-    w_description: "Conception d'un siteweb de e-commerce moderne et responsible pour Madame ELSA",
-    w_projectLink: "https://academiecreatif.com/",
+    w_year: "2026",
+    w_type: "Projet personnel",
+    w_technologies: ["React JS", "Javascript", "Webforms", "UI/UX Design", "Netlify"],
+    w_description: "Site Web Porfolio de Francis Kenne, Developpeur FullStack Javascript, UI/UX Design & Graphiste",
+    w_projectLink: "https://www.franciskenne.me",
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: []
-  },{
+  },
+  
+  
+  {
     w_img: etrack,
     w_name: "E-Track Financial",
     w_categories: ["Application", "Web"],
@@ -118,6 +122,22 @@ const mywork_data = [
     w_mockupLink: "", 
     w_images: []
   },
+
+  {
+    w_img: preview,
+    w_name: "Académie des Créatifs",
+    w_categories: ["SiteWeb", "formation en live"],
+    w_status: "online",
+    w_year: "2024",
+    w_type: "Projet client",
+    w_technologies: ["React JS", "UI/UX Design", "Javascript", "Tailwind css"],
+    w_description: "Conception d'un siteweb de e-commerce moderne et responsible pour Madame ELSA",
+    w_projectLink: "https://academiecreatif.com/",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: []
+  },
+  
+
   {
     w_img: km1,
     w_name: "KM Brand Identity",
@@ -131,8 +151,7 @@ const mywork_data = [
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: [km10,km2,km3,km4,km5,km6,km7,km8,km9,km1]
   },
-  
-  
+   
 ]
  
 export default mywork_data;

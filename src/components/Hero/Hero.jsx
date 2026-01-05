@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
-import './Hero.css'
-import fkpic from '../../assets/fk-pic.png'
-import QuoteModal from '../QuoteModal/QuoteModal' // 1. Import du Modal
+import React, { useEffect, useRef, useState } from "react";
+import "./Hero.css";
+import fkpic from "../../assets/fk-pic.png";
+import QuoteModal from "../QuoteModal/QuoteModal"; // 1. Import du Modal
 
 function Hero() {
   const starsContainerRef = useRef(null);
-  
+
   // 2. État pour gérer l'ouverture du modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -15,26 +15,26 @@ function Hero() {
     if (!container) return;
 
     // Nettoyer les étoiles existantes
-    container.innerHTML = '';
+    container.innerHTML = "";
 
     // Créer 150 étoiles
     for (let i = 0; i < 150; i++) {
-      const star = document.createElement('div');
-      star.className = 'star';
-      
+      const star = document.createElement("div");
+      star.className = "star";
+
       // Position aléatoire
       const left = Math.random() * 100;
       const top = Math.random() * 100;
-      
+
       // Taille aléatoire entre 1px et 3px
       const size = Math.random() * 2 + 1;
-      
+
       // Durée d'animation aléatoire entre 3 et 8 secondes
       const duration = Math.random() * 5 + 3;
-      
+
       // Délai aléatoire
       const delay = Math.random() * 5;
-      
+
       star.style.cssText = `
         left: ${left}%;
         top: ${top}%;
@@ -43,21 +43,21 @@ function Hero() {
         --duration: ${duration}s;
         animation-delay: ${delay}s;
       `;
-      
+
       container.appendChild(star);
     }
 
     // Nettoyage
     return () => {
-      container.innerHTML = '';
+      container.innerHTML = "";
     };
   }, []);
 
   return (
-    <div className='hero' id='home'>
+    <div className="hero" id="home">
       {/* Fond spatial animé */}
       <div ref={starsContainerRef} className="stars-container"></div>
-      
+
       {/* Nébuleuses colorées */}
       <div className="nebula nebula-1"></div>
       <div className="nebula nebula-2"></div>
@@ -73,33 +73,39 @@ function Hero() {
         <div className="hero-text">
           <h1>
             <span>Francis Kenne</span>,<br />
-            Développeur Web<br />
+            Développeur Web
+            <br />
             UI/UX Designer.
           </h1>
-          <p>
-            Stage | Alternance | Freelance
-          </p>
+          <p>Stage | Alternance | Freelance</p>
           <div className="hero-action">
             {/* 3. Ajout de l'événement onClick sur le bouton Devis */}
-            <button 
-                className="hero-connect" 
-                onClick={() => setIsModalOpen(true)}
+            <button
+              className="hero-connect"
+              onClick={() => setIsModalOpen(true)}
             >
-                Demander un devis
+              Demander un devis
             </button>
-            <button className="hero-resume">Télecharger mon CV</button>
+            <a
+              href="/CV_Francis_Kenne.pdf"
+              download="CV_Francis_Kenne.pdf"
+              className="hero-resume"
+              style={{ textDecoration: "none", display: "inline-block" }}
+            >
+              Télecharger mon CV
+            </a>
           </div>
         </div>
       </div>
 
       {/* 4. Intégration du Modal en bas du composant */}
-      <QuoteModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        initialService="Projet Web & Design" 
+      <QuoteModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        initialService="Projet Web & Design"
       />
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
