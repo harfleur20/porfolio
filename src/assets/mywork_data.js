@@ -38,6 +38,13 @@ import etrack from './e-track.jpg'
 import takecare from './takecare.jpg'
 import porfolio from './porfolio.jpg'
 
+//proclean
+import proclean_img from './ProClean/proclean.jpg'
+import proclean_ui1 from './ProClean/proclean_img1.jpeg'
+import proclean_ui2 from './ProClean/proclean_img2.jpeg'
+import proclean_ui3 from './ProClean/proclean_img3.jpg'
+import proclean_ui4 from './ProClean/proclean_img4.jpg'
+
 const mywork_data = [
   {
     w_img: profil1,
@@ -136,7 +143,6 @@ const mywork_data = [
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: []
   },
-  
 
   {
     w_img: km1,
@@ -150,6 +156,21 @@ const mywork_data = [
     w_projectLink: "https://www.behance.net/gallery/224005293/KM-StreetSportWear-Identit-Visuelle",
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: [km10,km2,km3,km4,km5,km6,km7,km8,km9,km1]
+  },
+  
+
+  {
+    w_img: proclean_img,
+    w_name: "Proclean Solutions",
+    w_categories: ["Application", "Desktop", "C#", "Projet académique"],
+    w_status: "online",
+    w_year: "2023",
+    w_type: "Projet académique",
+    w_technologies: [".NET", "C#", "UI/UX Design", "Illustrator", "Visual Studio"],
+    w_description: "Création d'une application desktop de nettoyage des fichiers temporaires, doublons et fichiers caches des applications Web sur PC",
+    w_projectLink: "https://github.com/harfleur20/PROCLEAN_LogicielNettoyage",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: [proclean_ui3, proclean_ui4, proclean_ui1, proclean_ui2]
   },
    
 ]
