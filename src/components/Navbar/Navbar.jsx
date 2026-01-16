@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 import logo2 from "../../assets/logo.png";
 import underline from "../../assets/nav_underline.svg";
@@ -11,19 +11,21 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isSocialModalOpen, setIsSocialModalOpen] = useState(false);
+  const [isManualClick, setIsManualClick] = useState(false);
+  const clickTimeoutRef = useRef(null);
 
-  // 🔧 Gestion du scroll pour la navbar fixe + détection des sections
+  // 🔧 Gestion du scroll
   useEffect(() => {
-    // Partie 1: Effet glass au scroll
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      setScrolled(isScrolled);
-    };
-
-    // Partie 2: Détection automatique des sections visibles
-    const handleSectionScroll = () => {
+      // Glass effect après 50px de scroll
+      setScrolled(window.scrollY > 50);
+      
+      // Si c'est un clic manuel, on ignore la détection automatique
+      if (isManualClick) return;
+      
+      // Détection automatique des sections visibles
       const sections = ["home", "about", "service", "work", "contact"];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 150;
 
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
@@ -39,20 +41,39 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleSectionScroll);
-    handleSectionScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Appel initial pour définir l'état correct au chargement
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleSectionScroll);
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
     };
-  }, []);
+  }, [isManualClick]);
 
-  // 🔧 Fonction pour fermer le menu mobile
+  // 🔧 Fonction pour gérer le clic sur un lien
   const handleMenuClick = (menuItem) => {
+    // 1. Définir immédiatement le menu cliqué
     setMenu(menuItem);
+    
+    // 2. Fermer le menu mobile
     setMenuOpen(false);
+    
+    // 3. Activer le mode "clic manuel" pour ignorer la détection automatique
+    setIsManualClick(true);
+    
+    // 4. Nettoyer le timeout précédent s'il existe
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+    
+    // 5. Réactiver la détection automatique après 1.5 secondes
+    // (le temps que le scroll animé soit terminé)
+    clickTimeoutRef.current = setTimeout(() => {
+      setIsManualClick(false);
+    }, 1500);
   };
 
   // 🔧 Fermer le menu en cliquant sur l'overlay
@@ -101,8 +122,9 @@ const Navbar = () => {
               className="anchor-link"
               offset={item.offset || 0}
               href={item.href}
+              onClick={() => handleMenuClick(item.id)}
             >
-              <p onClick={() => handleMenuClick(item.id)}>{item.label}</p>
+              <p>{item.label}</p>
             </AnchorLink>
             {menu === item.id && (
               <img src={underline} alt="" className="underline-logo" />

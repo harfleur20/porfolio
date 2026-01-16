@@ -3,15 +3,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Calcul de la largeur : 100% moins le cumul des marges (140px * 2) */
-    width: calc(100% - 280px); 
-    margin: 20px 140px;
-    padding: 15px 70px;
-    position: fixed; 
+    width: 100%;
+    margin: 0;
+    padding: 20px 140px;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; 
-    transition: all 0.4s ease; 
+    z-index: 1000;
+    transition: all 0.3s ease;
     background: transparent;
     box-sizing: border-box;
 }
@@ -23,16 +22,13 @@
     height: auto;
 }
 
-
 /* --- État Scrolled --- */
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0; 
-    width: 100%; /* Reprend toute la largeur au scroll */
-    padding: 10px 140px; 
+    padding: 15px 140px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
@@ -133,40 +129,33 @@
     z-index: 999;
 }
 
-/* ====================================
-   RESPONSIVE DESIGN
-   ============================================================ */
+/* ==================================== */
+/* RESPONSIVE DESIGN */
+/* ==================================== */
 
 @media screen and (max-width: 1200px) {
     .navbar {
-        margin: 20px 50px;
-        width: calc(100% - 100px);
-        padding: 25px 40px;
+        padding: 20px 50px !important;
     }
 
-    .logo-scroll{
-        display: flex;
-        margin-top: -10px;
-        align-items: center;
-    }
-    
     .navbar.scrolled {
-        margin: 0;
-        width: 100%;
-        padding: 10px 50px;
+        padding: 15px 50px !important;
+    }
+
+    .logo-scroll {
+        margin-top: -10px;
     }
 }
 
 @media screen and (max-width: 968px) {
     .navbar {
-        margin: 0 !important; 
-        padding: 35px 40px;
-        width: 100% !important;
-        border-radius: 0;
+        padding: 20px 40px !important;
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(10px);
     }
     
     .navbar.scrolled {
-        padding: 10px 30px;
+        padding: 15px 40px !important;
         background: rgba(10, 10, 10, 0.95);
     }
     
@@ -213,25 +202,20 @@
 
 @media screen and (max-width: 480px) {
     .navbar {
-        padding: 30px 25px;
+        padding: 20px 25px !important;
     }
     
     .navbar.scrolled {
-        padding: 10px 20px;
+        padding: 15px 25px !important;
     }
     
     .nav-menu {
         width: 100%;
     }
 
-    .logo-scroll{
-        display: flex;
-        margin-top: -10px;
-        align-items: center;
-    }
-
     .logo-scroll {
         max-width: 130px;
+        margin-top: -10px;
     }
 }
 
@@ -239,4 +223,3 @@
 section {
     scroll-margin-top: 80px;
 }
-
