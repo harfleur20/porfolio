@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './About.css'
-// import themePattern from '../../assets/theme_pattern.svg'
 import profile_img from '../../assets/react.png'
 
 function About() {
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  
   useEffect(() => {
+    // Création des étoiles
     const container = document.querySelector('.about-stars');
     if (!container) return;
 
@@ -33,20 +36,52 @@ function About() {
       container.appendChild(star);
     }
 
+    // Observer pour l'animation des compétences
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const skillBars = entry.target.querySelectorAll('.about-skill hr');
+            
+            // Animer chaque barre avec un délai progressif
+            skillBars.forEach((bar, index) => {
+              setTimeout(() => {
+                bar.classList.add('animate');
+              }, index * 200); // 200ms entre chaque animation
+            });
+            
+            // Arrêter d'observer après l'animation
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Déclenche quand 30% est visible
+        rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant
+      }
+    );
+
+    if (skillsRef.current) {
+      observer.observe(skillsRef.current);
+    }
+
     return () => {
       const container = document.querySelector('.about-stars');
       if (container) container.innerHTML = '';
+      
+      if (skillsRef.current) {
+        observer.unobserve(skillsRef.current);
+      }
     };
   }, []);
 
   return (
-    <div className='about' id='about'>
+    <div className='about' id='about' ref={aboutRef}>
         {/* Étoiles en fond */}
         <div className="about-stars"></div>
         
         <div className="about-title">
             <h1>A propos de moi</h1>
-            {/* <img src={themePattern} alt="" /> */}
         </div>
         <div className="about-sections">
             <div className="about-left">
@@ -57,13 +92,30 @@ function About() {
                   <p>Je suis un développeur Fullstack, UI/UX Designer & Graphiste, capable de concevoir de l'identité visuelle à la conception d'applications web interactives et responsives.</p>
                   <p>Spécialisé en React, JavaScript et technologies web modernes, je transforme les maquettes en expériences numériques fluides.</p>
                 </div>
-                <div className="about-skills">
-                    <div className="about-skill"><p>Next JS</p> <hr style={{width:"45%"}}/></div>
-                    <div className="about-skill"><p>React JS</p> <hr style={{width:"60%"}}/></div>
-                    <div className="about-skill"><p>Javascript</p> <hr style={{width:"55%"}}/></div>
-                    <div className="about-skill"><p>Node JS</p> <hr style={{width:"40%"}}/></div>
-                    <div className="about-skill"><p>Infra | CI/CD</p> <hr style={{width:"25%"}}/></div>
+                
+              <div className="about-skills" ref={skillsRef}>
+                <div className="about-skill">
+                    <p>Next JS</p> 
+                    <hr style={{ '--skill-width': '35%' }} />
                 </div>
+                <div className="about-skill">
+                    <p>React JS</p> 
+                    <hr style={{ '--skill-width': '50%' }} />
+                </div>
+                <div className="about-skill">
+                    <p>Javascript</p> 
+                    <hr style={{ '--skill-width': '40%' }} />
+                </div>
+                <div className="about-skill">
+                    <p>Node JS</p> 
+                    <hr style={{ '--skill-width': '30%' }} />
+                </div>
+                <div className="about-skill">
+                    <p>Infra | CI/CD</p> 
+                    <hr style={{ '--skill-width': '20%' }} />
+                </div>
+              </div>
+
             </div>
         </div>
         <div className="about-achievements">

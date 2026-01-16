@@ -72,14 +72,58 @@
     font-weight: 500;
 }
 
-.about-skill hr {
+    .about-skill hr {
     outline: none;
     border: none;
-    width: 50%;
     height: 8px;
     border-radius: 50px;
     background: linear-gradient(264deg, #FF8A00 -5.09%, #B415FF 106.28%);
+    width: 0%; /* Commence à 0 */
+    max-width: var(--skill-width);
+    transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
 }
+
+/* Classe qui déclenche l'animation */
+.about-skill hr.animate {
+    width: var(--skill-width);
+}
+
+/* Ajoute un fond pour les barres */
+.about-skill {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    transition: 0.3s;
+    position: relative;
+    width: 100%;
+}
+
+/* Barre de fond grise (optionnel) */
+.about-skill::after {
+    content: '';
+    position: absolute;
+    left: 170px;
+    right: 0px;
+    height: 8px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+}
+
+/* Responsive pour les barres de fond */
+@media screen and (max-width: 768px) {
+    .about-skill::after {
+        left: 110px; /* Ajuste pour mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-skill::after {
+        left: 110px; /* Ajuste pour mobile très petit */
+    }
+}
+
 
 .about-achievements {
     display: flex;
@@ -143,7 +187,7 @@
     }
 
     .about-skill hr {
-        width: 50%;
+        width: 85%;
     }
 }
 
@@ -214,13 +258,6 @@
         text-align: left;
     }
     
-    .about-skill hr {
-
-        flex: 1 !important; 
-        width: auto !important; 
-        height: 6px;
-        margin: 0;
-    }
 
     .about-achievements {
         margin-top: 5px;
