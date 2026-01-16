@@ -23,6 +23,7 @@
     height: auto;
 }
 
+
 /* --- État Scrolled --- */
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.1);
@@ -140,7 +141,13 @@
     .navbar {
         margin: 20px 50px;
         width: calc(100% - 100px);
-        padding: 15px 40px;
+        padding: 25px 40px;
+    }
+
+    .logo-scroll{
+        display: flex;
+        margin-top: -10px;
+        align-items: center;
     }
     
     .navbar.scrolled {
@@ -153,7 +160,7 @@
 @media screen and (max-width: 968px) {
     .navbar {
         margin: 0 !important; 
-        padding: 15px 30px;
+        padding: 35px 40px;
         width: 100% !important;
         border-radius: 0;
     }
@@ -206,7 +213,7 @@
 
 @media screen and (max-width: 480px) {
     .navbar {
-        padding: 15px 20px;
+        padding: 30px 25px;
     }
     
     .navbar.scrolled {
@@ -215,6 +222,12 @@
     
     .nav-menu {
         width: 100%;
+    }
+
+    .logo-scroll{
+        display: flex;
+        margin-top: -10px;
+        align-items: center;
     }
 
     .logo-scroll {
