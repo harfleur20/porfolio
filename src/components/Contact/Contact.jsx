@@ -3,7 +3,7 @@ import './Contact.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import email_icon from '../../assets/mail_icon.svg'
 import location_icon from '../../assets/location_icon.svg'
-import call_icon from '../../assets/call_icon.svg'
+// import call_icon from '../../assets/call_icon.svg'
 
 const Contact = () => {
 
@@ -55,9 +55,9 @@ const Contact = () => {
                 <div className="contact-detail">
                     <img src={email_icon} alt="" /> <p>info@franciskenne.me</p>
                 </div>
-                <div className="contact-detail">
+                {/* <div className="contact-detail">
                     <img src={call_icon} alt="" /> <p>+33 7 58 04 55 87</p>
-                </div>
+                </div> */}
                 <div className="contact-detail">
                     <img src={location_icon} alt="" /> <p>Limoges, Haute-vienne</p>
                 </div>
