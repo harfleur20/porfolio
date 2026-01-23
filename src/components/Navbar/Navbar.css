@@ -149,7 +149,7 @@
 
 @media screen and (max-width: 968px) {
     .navbar {
-        padding: 20px 40px !important;
+        padding: 27px 40px !important;
         /* background: rgba(10, 10, 10, 0.9);
         backdrop-filter: blur(10px); */
     }
@@ -202,7 +202,7 @@
 
 @media screen and (max-width: 480px) {
     .navbar {
-        padding: 20px 25px !important;
+        padding: 28px 25px !important;
     }
     
     .navbar.scrolled {
