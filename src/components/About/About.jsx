@@ -61,16 +61,17 @@ function About() {
       }
     );
 
-    if (skillsRef.current) {
-      observer.observe(skillsRef.current);
+    const currentSkillsRef = skillsRef.current;
+    if (currentSkillsRef) {
+      observer.observe(currentSkillsRef);
     }
 
     return () => {
       const container = document.querySelector('.about-stars');
       if (container) container.innerHTML = '';
       
-      if (skillsRef.current) {
-        observer.unobserve(skillsRef.current);
+      if (currentSkillsRef) {
+        observer.unobserve(currentSkillsRef);
       }
     };
   }, []);

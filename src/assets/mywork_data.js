@@ -33,7 +33,18 @@ import km9 from './KM/page 9.jpg'
 import km10 from './KM/2.jpg'
 
 //academiedescreatifs
+import previewac from './academiecreatifs/ac2.jpg'
+import previewac2 from './academiecreatifs/ac3.jpg'
+import previewac3 from './academiecreatifs/ac4.jpg'
+import previewac4 from './academiecreatifs/ac5.jpg'
+import previewac6 from './academiecreatifs/ac6.jpg'
 import preview from './academiecreatifs/ac1.jpg'
+
+
+
+
+
+//tous les autres
 import etrack from './e-track.jpg'
 import takecare from './takecare.jpg'
 import porfolio from './porfolio.jpg'
@@ -114,6 +125,21 @@ const mywork_data = [
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: []
   },
+
+   {
+    w_img: preview,
+    w_name: "Académie des Créatifs",
+    w_categories: ["SiteWeb", "formation en live"],
+    w_status: "online",
+    w_year: "2024",
+    w_type: "Projet personnel",
+    w_technologies: ["Vanilla", "UI/UX Design", "Javascript", "css3", "Supabase", "Deno", "Codex", "Netlify"],
+    w_description: "Conception d'un siteweb de formation moderne et responsive pour vendre les formations live et accompagner les étudiants depuis leur Dashboard, les acteurs primaires : Etudiants / Professeurs / Admin",
+    w_projectLink: "https://academiecreatif.com/",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: [previewac, previewac2, previewac3,previewac4,previewac6]
+  },
+
   
   
   {
@@ -127,20 +153,6 @@ const mywork_data = [
     w_description: "Application de gestion financière, l'objectif est de concevoir une application pour aider dans la gestion de son budget et d'evaluer les dépenses",
     w_projectLink: "",
     w_mockupLink: "", 
-    w_images: []
-  },
-
-  {
-    w_img: preview,
-    w_name: "Académie des Créatifs",
-    w_categories: ["SiteWeb", "formation en live"],
-    w_status: "online",
-    w_year: "2024",
-    w_type: "Projet client",
-    w_technologies: ["React JS", "UI/UX Design", "Javascript", "Tailwind css"],
-    w_description: "Conception d'un siteweb de e-commerce moderne et responsible pour Madame ELSA",
-    w_projectLink: "https://academiecreatif.com/",
-    w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: []
   },
 
