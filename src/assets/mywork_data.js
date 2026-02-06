@@ -40,6 +40,15 @@ import previewac4 from './academiecreatifs/ac5.jpg'
 import previewac6 from './academiecreatifs/ac6.jpg'
 import preview from './academiecreatifs/ac1.jpg'
 
+//student planner
+import studentplanner1 from '../assets/studentPlanner/studentplanner.png'
+import studentplanner2 from '../assets/studentPlanner/studentplanner1.png'
+import studentplanner3 from '../assets/studentPlanner/studentplanner2.png'
+import studentplanner4 from '../assets/studentPlanner/studentplanner3.png'
+import studentplanner5 from '../assets/studentPlanner/studentplanner4.png'
+import studentplanner6 from '../assets/studentPlanner/studentplanner5.png'
+import studentplanner7 from '../assets/studentPlanner/studentplanner6.png'
+import studentplanner8 from '../assets/studentPlanner/studentplanner7.png'
 
 
 
@@ -57,6 +66,21 @@ import proclean_ui3 from './ProClean/proclean_img3.jpg'
 import proclean_ui4 from './ProClean/proclean_img4.jpg'
 
 const mywork_data = [
+
+  {
+    w_img: studentplanner1,
+    w_name: "Student Planner v1",
+    w_categories: ["App web", "Saas"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet personnel",
+    w_technologies: ["React JS", "Supabase", "Edge functions", "Tailwind CSS", "Netlify", "Cron jobs", "Typescript"],
+    w_description: "Student Planner est une plateforme tout‑en‑un pensée pour aider les étudiants à s’organiser, rester réguliers et réussir. Elle transforme des objectifs flous en actions claires grâce à un planning simple, une to‑do intelligente, des rappels utiles et des analytics lisibles. Tout est centralisé : cours, tâches, révisions, et même le suivi des candidatures (statut, dates, relances). Résultat : moins de stress, plus de clarté et une progression visible. La version Bêta est gratuite avec toutes les fonctionnalités incluses.",
+    w_projectLink: "https://studentplannerr.netlify.app/dashboard",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: [studentplanner8,studentplanner2, studentplanner3, studentplanner4, studentplanner5, studentplanner6, studentplanner7]
+  },
+
   {
     w_img: profil1,
     w_name: "MEGA QUIZ  100",
