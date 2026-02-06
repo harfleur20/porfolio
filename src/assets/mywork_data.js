@@ -41,14 +41,14 @@ import previewac6 from './academiecreatifs/ac6.jpg'
 import preview from './academiecreatifs/ac1.jpg'
 
 //student planner
-import studentplanner1 from '../assets/studentPlanner/studentplanner.png'
-import studentplanner2 from '../assets/studentPlanner/studentplanner1.png'
-import studentplanner3 from '../assets/studentPlanner/studentplanner2.png'
-import studentplanner4 from '../assets/studentPlanner/studentplanner3.png'
-import studentplanner5 from '../assets/studentPlanner/studentplanner4.png'
-import studentplanner6 from '../assets/studentPlanner/studentplanner5.png'
-import studentplanner7 from '../assets/studentPlanner/studentplanner6.png'
-import studentplanner8 from '../assets/studentPlanner/studentplanner7.png'
+import studentplanner1 from './studentPlanner/studentPlanner.png'
+import studentplanner2 from './studentPlanner/studentPlanner1.png'
+import studentplanner3 from './studentPlanner/studentPlanner2.png'
+import studentplanner4 from './studentPlanner/studentPlanner3.png'
+import studentplanner5 from './studentPlanner/studentPlanner4.png'
+import studentplanner6 from './studentPlanner/studentPlanner5.png'
+import studentplanner7 from './studentPlanner/studentPlanner6.png'
+import studentplanner8 from './studentPlanner/studentPlanner7.png'
 
 
 
