@@ -13,7 +13,7 @@ function About() {
 
     container.innerHTML = '';
 
-    // Créer 60 étoiles
+    // Création de 60 étoiles 60 étoiles
     for (let i = 0; i < 60; i++) {
       const star = document.createElement('div');
       star.className = 'about-star';
@@ -121,7 +121,7 @@ function About() {
         </div>
         <div className="about-achievements">
             <div className="about-achievement">
-                <h1>2+</h1>
+                <h1>3+</h1>
                 <p>ANS D'EXEPRIENCE</p>
             </div>
             <hr />
