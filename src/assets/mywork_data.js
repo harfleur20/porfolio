@@ -33,11 +33,15 @@ import km9 from './KM/page 9.jpg'
 import km10 from './KM/2.jpg'
 
 //academiedescreatifs
-import previewac from './academiecreatifs/ac2.jpg'
-import previewac2 from './academiecreatifs/ac3.jpg'
-import previewac3 from './academiecreatifs/ac4.jpg'
-import previewac4 from './academiecreatifs/ac5.jpg'
-import previewac6 from './academiecreatifs/ac6.jpg'
+import previewac from './academiecreatifs/ac2.png'
+import previewac2 from './academiecreatifs/ac7.jpg'
+import previewac3 from './academiecreatifs/ac10.jpg'
+import previewac14 from './academiecreatifs/ac14.jpg'
+import previewac12 from './academiecreatifs/ac12.jpg'
+import previewac11 from './academiecreatifs/ac11.jpg'
+import previewac8 from './academiecreatifs/ac8.jpg'
+import previewac13 from './academiecreatifs/ac13.jpg'
+import previewac9 from './academiecreatifs/ac9.jpg'
 import preview from './academiecreatifs/ac1.jpg'
 
 //student planner
@@ -57,6 +61,7 @@ import studentplanner8 from './studentPlanner/studentPlanner7.png'
 import etrack from './e-track.jpg'
 import takecare from './takecare.jpg'
 import porfolio from './porfolio.jpg'
+import pad_img from './porfolio_img_pad.png'
 
 //proclean
 import proclean_img from './ProClean/proclean.jpg'
@@ -79,6 +84,34 @@ const mywork_data = [
     w_projectLink: "https://studentplannerr.netlify.app/dashboard",
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: [studentplanner8,studentplanner2, studentplanner3, studentplanner4, studentplanner5, studentplanner6, studentplanner7]
+  },
+
+  {
+    w_img: pad_img,
+    w_name: "PAD-gestion routière",
+    w_categories: ["Logiciel prise de décision", "App Offline"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet Port Autonome de Douala (PAD)",
+    w_technologies: ["React JS", "Postgre SQL", "TypeScript", "Intégration IA"],
+    w_description: "J'ai eu à developper un module de prise de décison pour la gestion routière qui sera utilisé par le PAD, l'objectif est d'évaluer les dégradations en fonctions des voies, des sessions et des SAP, et centraliser ses données afin d'etre exploitater par la prise de décision automation qui proposera un traitement adapté à la dégradation et soumettre un rapport pouvant être imprimé et utilisé par les techniciens.",
+    w_projectLink: "https://github.com/harfleur20/Pad-outil-de-gestion-routiere",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: []
+  },
+
+  {
+    w_img: preview,
+    w_name: "Académie des Créatifs",
+    w_categories: ["SiteWeb", "formation en live", "Billeterie"],
+    w_status: "online",
+    w_year: "2025",
+    w_type: "Projet personnel",
+    w_technologies: ["React JS", "UI/UX Design", "FastAPI", "css", "PostgreSQL", "API REST", "Infra/CI/CD", "Monitoring", "Intégration IA", "SQL ALEMBIC", "Pydantic", "WebSocket", "Uvicorn"],
+    w_description: "Conception d'un siteweb de formation moderne et responsive pour vendre les formations live et accompagner les étudiants depuis leur Dashboard, les acteurs primaires : Etudiants / Professeurs / Admin",
+    w_projectLink: "https://academiecreatif.com/",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: [previewac, previewac2, previewac3, previewac8, previewac9, previewac11, previewac12, previewac13, previewac14 ]
   },
 
   {
@@ -149,22 +182,6 @@ const mywork_data = [
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: []
   },
-
-   {
-    w_img: preview,
-    w_name: "Académie des Créatifs",
-    w_categories: ["SiteWeb", "formation en live"],
-    w_status: "online",
-    w_year: "2024",
-    w_type: "Projet personnel",
-    w_technologies: ["Vanilla", "UI/UX Design", "Javascript", "css3", "Supabase", "Deno", "Codex", "Netlify"],
-    w_description: "Conception d'un siteweb de formation moderne et responsive pour vendre les formations live et accompagner les étudiants depuis leur Dashboard, les acteurs primaires : Etudiants / Professeurs / Admin",
-    w_projectLink: "https://academiecreatif.com/",
-    w_mockupLink: "", // Laissez vide si pas de maquette
-    w_images: [previewac, previewac2, previewac3,previewac4,previewac6]
-  },
-
-  
   
   {
     w_img: etrack,

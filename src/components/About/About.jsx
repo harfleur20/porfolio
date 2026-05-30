@@ -96,24 +96,24 @@ function About() {
                 
               <div className="about-skills" ref={skillsRef}>
                 <div className="about-skill">
-                    <p>Next JS</p> 
-                    <hr style={{ '--skill-width': '35%' }} />
+                    <p>UI/UX Design</p> 
+                    <hr style={{ '--skill-width': '38%' }} />
                 </div>
                 <div className="about-skill">
-                    <p>React JS</p> 
+                    <p>Frontend</p> 
                     <hr style={{ '--skill-width': '50%' }} />
                 </div>
                 <div className="about-skill">
-                    <p>Javascript</p> 
-                    <hr style={{ '--skill-width': '40%' }} />
+                    <p>Backend</p> 
+                    <hr style={{ '--skill-width': '60%' }} />
                 </div>
                 <div className="about-skill">
-                    <p>Node JS</p> 
-                    <hr style={{ '--skill-width': '30%' }} />
+                    <p>DevOps</p> 
+                    <hr style={{ '--skill-width': '45%' }} />
                 </div>
                 <div className="about-skill">
-                    <p>Infra | CI/CD</p> 
-                    <hr style={{ '--skill-width': '20%' }} />
+                    <p>Architecture</p> 
+                    <hr style={{ '--skill-width': '35%' }} />
                 </div>
               </div>
 
