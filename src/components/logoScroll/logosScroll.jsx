@@ -6,25 +6,28 @@ const LogosScroll = () => {
   const logos = [
     { name: 'MongoDB', src: '/logos/mongodb-icon-1.svg' },
     { name: 'Javascript', src: '/logos/JavaScript-logo.png' },
-    { name: 'Next JS', src: '/logos/nextjs-original.png'},
+    { name: 'Docker', src: '/logos/docker.png'},
     { name: 'React JS', src: '/logos/React-icon.svg.png'},
     { name: 'Typescript', src: '/logos/typescript_plain_logo.webp' },
-    { name: 'Illustrator', src: '/logos/ai_logo.png' },
+    { name: 'AWS', src: '/logos/logoaws.png' },
     { name: 'Figma', src: '/logos/figma.png' },
     { name: 'Tailwind CSS', src: '/logos/Tailwind_CSS_Logo.svg.png' },
-    { name: 'Terraform', src: '/logos/terraform.png' }
+    { name: 'Terraform', src: '/logos/terraform.png' },
+    { name: 'Kubernetes', src: '/logos/Kubernetes_logo_without_workmark.svg.png' },
+    { name: 'PostgreSQL', src: '/public/logos/Postgresql_elephant.svg' }
   ];
 
   const logo2 = [
     { name: 'Supabase', src: '/logos/supabase.png' },
-    { name: 'Trello', src: '/logos/Trello-logo.png' },
+    { name: 'MySQL', src: '/logos/MySQL.svg' },
     { name: 'Node JS', src: '/logos/Node.png'},
     { name: 'Gitlab CI/CD', src: '/logos/gitlab.svg'},
-    { name: 'Redux', src: '/logos/redux.png' },
+    { name: 'Python', src: '/logos/Python-logo.png' },
     { name: 'Github', src: '/logos/github-logo.png' },
     { name: 'Sass', src: '/logos/logo_sass-6.png' },
-    { name: 'Confluence', src: '/logos/confluence.png' },
-    { name: 'Photoshop', src: '/logos/photoshop.png' }
+    { name: 'Ansible', src: '/public/logos/Ansible_logo.svg.png' },
+    { name: 'Jenkins', src: '/logos/Jenkins_logo.svg.png' },
+    { name: 'Vagrant', src: '/logos/Vagrant.png' }
   ];
 
   return (

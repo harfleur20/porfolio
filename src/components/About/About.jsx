@@ -90,8 +90,9 @@ function About() {
             </div>
             <div className="about-right">
                 <div className="about-para">
-                  <p>Je suis un développeur Fullstack, UI/UX Designer & Graphiste, capable de concevoir de l'identité visuelle à la conception d'applications web interactives et responsives.</p>
-                  <p>Spécialisé en React, JavaScript et technologies web modernes, je transforme les maquettes en expériences numériques fluides.</p>
+                  <p>Je suis développeur Fullstack, intégrateur IA et DevOps, capable de concevoir des solutions digitales complètes, de l’identité visuelle au développement d’applications web modernes.</p>
+
+                  <p>Spécialisé en React, JavaScript et technologies web avancées, je transforme les idées en expériences numériques fluides.</p>
                 </div>
                 
               <div className="about-skills" ref={skillsRef}>
@@ -101,15 +102,15 @@ function About() {
                 </div>
                 <div className="about-skill">
                     <p>Frontend</p> 
-                    <hr style={{ '--skill-width': '50%' }} />
+                    <hr style={{ '--skill-width': '48%' }} />
                 </div>
                 <div className="about-skill">
                     <p>Backend</p> 
-                    <hr style={{ '--skill-width': '60%' }} />
+                    <hr style={{ '--skill-width': '53%' }} />
                 </div>
                 <div className="about-skill">
                     <p>DevOps</p> 
-                    <hr style={{ '--skill-width': '45%' }} />
+                    <hr style={{ '--skill-width': '40%' }} />
                 </div>
                 <div className="about-skill">
                     <p>Architecture</p> 

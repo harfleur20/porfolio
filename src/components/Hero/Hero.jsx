@@ -73,7 +73,7 @@ function Hero({setIsModalOpen}) {
             <span>Francis Kenne</span>,<br />
             Développeur Web
             <br />
-            UI/UX Designer.
+            CLOUD & DevOps.
           </h1>
           <p>Stage | Alternance | Freelance</p>
           <div className="hero-action">
