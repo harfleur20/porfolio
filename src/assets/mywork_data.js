@@ -54,11 +54,22 @@ import studentplanner6 from './studentPlanner/studentPlanner5.png'
 import studentplanner7 from './studentPlanner/studentPlanner6.png'
 import studentplanner8 from './studentPlanner/studentPlanner7.png'
 
+//deploiement
 
+import awsImage1 from './Deployement/Image ChatGPT 1 oct. 2026, 16_13_55-1.png'
+import awsImage2 from './Deployement/Image ChatGPT 1 oct. 2026, 16_13_57-2.png'
+import awsImage3 from './Deployement/Image ChatGPT 1 oct. 2026, 16_57_56.png'
 
+//images coupes
+
+import img_coupe1 from './coupeDesCreatifs/001.jpg'
+import img_coupe2 from './coupeDesCreatifs/4.jpg'
+import img_coupe3 from './coupeDesCreatifs/Capture d’écran 2026-09-06 233654.jpg'
+import img_coupe4 from './coupeDesCreatifs/Capture d’écran 2026-09-07 100325.jpg'
+import img_coupe5 from './coupeDesCreatifs/Capture d’écran 2026-09-07 101023.png'
+import img_coupe6 from './coupeDesCreatifs/interfaces1.jpg'
 
 //tous les autres
-import etrack from './e-track.jpg'
 import takecare from './takecare.jpg'
 import porfolio from './porfolio.jpg'
 import pad_img from './porfolio_img_pad.png'
@@ -72,18 +83,59 @@ import proclean_ui4 from './ProClean/proclean_img4.jpg'
 
 const mywork_data = [
 
-  {
-    w_img: studentplanner1,
-    w_name: "Student Planner v1",
-    w_categories: ["App web", "Saas"],
+
+{
+    w_img: awsImage1,
+    w_name: "Déploiement React sur AWS",
+    w_categories: ["infrastructure", "DevOps"],
     w_status: "online",
     w_year: "2026",
-    w_type: "Projet personnel",
-    w_technologies: ["React JS", "Supabase", "Edge functions", "Tailwind CSS", "Netlify", "Cron jobs", "Typescript"],
-    w_description: "Student Planner est une plateforme tout‑en‑un pensée pour aider les étudiants à s’organiser, rester réguliers et réussir. Elle transforme des objectifs flous en actions claires grâce à un planning simple, une to‑do intelligente, des rappels utiles et des analytics lisibles. Tout est centralisé : cours, tâches, révisions, et même le suivi des candidatures (statut, dates, relances). Résultat : moins de stress, plus de clarté et une progression visible. La version Bêta est gratuite avec toutes les fonctionnalités incluses.",
-    w_projectLink: "https://studentplannerr.netlify.app/dashboard",
+    w_type: "Projet Pratique",
+    w_technologies: ["React", "AWS S3", "CloudFront", "Git", "GitHub"],
+    w_description: "Déploiement d’une application React sur AWS avec hébergement statique sur Amazon S3 et distribution mondiale via CloudFront. Mise en place d’un accès sécurisé, gestion du cache et invalidation des contenus lors des mises à jour.",
+    w_projectLink: "https://github.com/harfleur20/aws-react-s3-cloudfront",
     w_mockupLink: "", // Laissez vide si pas de maquette
-    w_images: [studentplanner8,studentplanner2, studentplanner3, studentplanner4, studentplanner5, studentplanner6, studentplanner7]
+    w_images: []
+  },
+   {
+    w_img: awsImage2,
+    w_name: "Déploiement Application Full-Stack sur AWS",
+    w_categories: ["infrastructure", "DevOps"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet Pratique",
+    w_technologies: ["Next.js", "Express", "TypeScript", "Prisma", "PostgreSQL", "AWS EC2", "Amazon RDS", "VPC"],
+    w_description: "Déploiement d’une application full-stack avec Next.js en frontend, une API Express/TypeScript et Prisma pour l’accès aux données. Architecture AWS avec VPC, EC2 et base PostgreSQL sur Amazon RDS, avec séparation des ressources publiques et privées.",
+    w_projectLink: "https://github.com/harfleur20/InventoryDataDashboard-Postgres-Node-Tailwind-aws",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: []
+  },
+   {
+    w_img: awsImage3,
+    w_name: "Déploiement Application Full-Stack sur AWS",
+    w_categories: ["infrastructure", "DevOps"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet Pratique",
+    w_technologies: ["AWS", "Terraform", "Ansible", "Docker", "Kubernetes", "Amazon EKS", "VPC", "GitHub Actions", "CloudWatch"],
+    w_description: "Automatisation complète du déploiement d’une application cloud-native sur AWS avec Terraform pour l’infrastructure, Ansible pour la configuration, Docker pour la conteneurisation et Kubernetes sur Amazon EKS pour l’orchestration. Le projet intègre également un réseau VPC sécurisé, un pipeline CI/CD et le monitoring avec CloudWatch.",
+    w_projectLink: "https://github.com/harfleur20/aws-terraform-ansible-kubernetes",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: []
+  },
+
+   {
+    w_img: preview,
+    w_name: "Académie des Créatifs",
+    w_categories: ["SiteWeb", "formation en live", "Billeterie"],
+    w_status: "online",
+    w_year: "2025",
+    w_type: "Projet personnel",
+    w_technologies: ["React JS", "UI/UX Design", "FastAPI", "css", "PostgreSQL", "API REST", "Infra/CI/CD", "Monitoring", "Intégration IA", "SQL ALEMBIC", "Pydantic", "WebSocket", "Uvicorn"],
+    w_description: "Conception d'un siteweb de formation moderne et responsive pour vendre les formations live et accompagner les étudiants depuis leur Dashboard, les acteurs primaires : Etudiants / Professeurs / Admin",
+    w_projectLink: "https://academiecreatif.com/",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: [previewac, previewac2, previewac3, previewac8, previewac9, previewac11, previewac12, previewac13, previewac14 ]
   },
 
   {
@@ -100,19 +152,34 @@ const mywork_data = [
     w_images: []
   },
 
-  {
-    w_img: preview,
-    w_name: "Académie des Créatifs",
-    w_categories: ["SiteWeb", "formation en live", "Billeterie"],
+   {
+    w_img: img_coupe1,
+    w_name: "La Coupe des Créatifs - 1er Esport des graphistes",
+    w_categories: ["Application", "Web"],
     w_status: "online",
-    w_year: "2025",
-    w_type: "Projet personnel",
-    w_technologies: ["React JS", "UI/UX Design", "FastAPI", "css", "PostgreSQL", "API REST", "Infra/CI/CD", "Monitoring", "Intégration IA", "SQL ALEMBIC", "Pydantic", "WebSocket", "Uvicorn"],
-    w_description: "Conception d'un siteweb de formation moderne et responsive pour vendre les formations live et accompagner les étudiants depuis leur Dashboard, les acteurs primaires : Etudiants / Professeurs / Admin",
-    w_projectLink: "https://academiecreatif.com/",
-    w_mockupLink: "", // Laissez vide si pas de maquette
-    w_images: [previewac, previewac2, previewac3, previewac8, previewac9, previewac11, previewac12, previewac13, previewac14 ]
+    w_year: "2026",
+    w_type: "Projet entreprenarial",
+    w_technologies: ["Next.js","React","TypeScript","Node.js","Turso","Prisma","Docker","Coolify"],
+    w_description: "Application de gestion financière, l'objectif est de concevoir une application pour aider dans la gestion de son budget et d'evaluer les dépenses",
+    w_projectLink: "https://coupe.academiecreatif.com",
+    w_mockupLink: "", 
+    w_images: [img_coupe2,img_coupe3,img_coupe4,img_coupe5, img_coupe6]
   },
+
+   {
+    w_img: studentplanner1,
+    w_name: "Student Planner v1",
+    w_categories: ["App web", "Saas"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet personnel",
+    w_technologies: ["React JS", "Supabase", "Edge functions", "Tailwind CSS", "Netlify", "Cron jobs", "Typescript"],
+    w_description: "Student Planner est une plateforme tout‑en‑un pensée pour aider les étudiants à s’organiser, rester réguliers et réussir. Elle transforme des objectifs flous en actions claires grâce à un planning simple, une to‑do intelligente, des rappels utiles et des analytics lisibles. Tout est centralisé : cours, tâches, révisions, et même le suivi des candidatures (statut, dates, relances). Résultat : moins de stress, plus de clarté et une progression visible. La version Bêta est gratuite avec toutes les fonctionnalités incluses.",
+    w_projectLink: "https://studentplannerr.netlify.app/dashboard",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: [studentplanner8,studentplanner2, studentplanner3, studentplanner4, studentplanner5, studentplanner6, studentplanner7]
+  },
+
 
   {
     w_img: profil1,
@@ -183,20 +250,6 @@ const mywork_data = [
     w_images: []
   },
   
-  {
-    w_img: etrack,
-    w_name: "E-Track Financial",
-    w_categories: ["Application", "Web"],
-    w_status: "encours",
-    w_year: "2026",
-    w_type: "Projet personnel",
-    w_technologies: ["Next JS", "Figma", "UI/UX Design", "NodesJS", "Prisma", "Clerk", "Tailwind"],
-    w_description: "Application de gestion financière, l'objectif est de concevoir une application pour aider dans la gestion de son budget et d'evaluer les dépenses",
-    w_projectLink: "",
-    w_mockupLink: "", 
-    w_images: []
-  },
-
   {
     w_img: km1,
     w_name: "KM Brand Identity",
