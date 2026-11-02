@@ -152,20 +152,6 @@ const mywork_data = [
     w_images: [previewac, previewac2, previewac3, previewac8, previewac9, previewac11, previewac12, previewac13, previewac14 ]
   },
 
-  {
-    w_img: pad_img,
-    w_name: "PAD-gestion routière",
-    w_categories: ["Logiciel prise de décision", "App Offline"],
-    w_status: "online",
-    w_year: "2026",
-    w_type: "Projet Port Autonome de Douala (PAD)",
-    w_technologies: ["React JS", "Postgre SQL", "TypeScript", "Intégration IA"],
-    w_description: "J'ai eu à developper un module de prise de décison pour la gestion routière qui sera utilisé par le PAD, l'objectif est d'évaluer les dégradations en fonctions des voies, des sessions et des SAP, et centraliser ses données afin d'etre exploitater par la prise de décision automation qui proposera un traitement adapté à la dégradation et soumettre un rapport pouvant être imprimé et utilisé par les techniciens.",
-    w_projectLink: "https://github.com/harfleur20/Pad-outil-de-gestion-routiere",
-    w_mockupLink: "", // Laissez vide si pas de maquette
-    w_images: []
-  },
-
    {
     w_img: img_coupe1,
     w_name: "Développement d'une application fullstack en Next js",
@@ -178,6 +164,20 @@ const mywork_data = [
     w_projectLink: "https://coupe.academiecreatif.com",
     w_mockupLink: "", 
     w_images: [img_coupe2,img_coupe3,img_coupe4,img_coupe5, img_coupe6]
+  },
+
+   {
+    w_img: pad_img,
+    w_name: "PAD-gestion routière",
+    w_categories: ["Logiciel prise de décision", "App Offline"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet Port Autonome de Douala (PAD)",
+    w_technologies: ["React JS", "Postgre SQL", "TypeScript", "Intégration IA"],
+    w_description: "J'ai eu à developper un module de prise de décison pour la gestion routière qui sera utilisé par le PAD, l'objectif est d'évaluer les dégradations en fonctions des voies, des sessions et des SAP, et centraliser ses données afin d'etre exploitater par la prise de décision automation qui proposera un traitement adapté à la dégradation et soumettre un rapport pouvant être imprimé et utilisé par les techniciens.",
+    w_projectLink: "https://github.com/harfleur20/Pad-outil-de-gestion-routiere",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: []
   },
 
    {
