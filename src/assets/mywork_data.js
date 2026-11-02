@@ -140,7 +140,7 @@ const mywork_data = [
 
    {
     w_img: preview,
-    w_name: "Académie des Créatifs",
+    w_name: "Développement Application fullstack en Next js + Python",
     w_categories: ["SiteWeb", "formation en live", "Billeterie"],
     w_status: "online",
     w_year: "2025",
@@ -168,13 +168,13 @@ const mywork_data = [
 
    {
     w_img: img_coupe1,
-    w_name: "La Coupe des Créatifs - 1er Esport des graphistes",
+    w_name: "Développement d'une application fullstack en Next js",
     w_categories: ["Application", "Web"],
     w_status: "online",
     w_year: "2026",
     w_type: "Projet entreprenarial",
     w_technologies: ["Next.js","React","TypeScript","Node.js","Turso","Prisma","Docker","Coolify"],
-    w_description: "Application de gestion financière, l'objectif est de concevoir une application pour aider dans la gestion de son budget et d'evaluer les dépenses",
+    w_description: "Application dediée à la compétition La Coupe des Créatifs - 1er Esport des graphistes, l'objectif est de centraliser la compétition en une seule plateforme : gestion des candidat, Jury & Admin, Parcours d'inscription, soumission projet, évaluation par les jury et supervision par l'admin. compétition de vote public en temps réel avec un système de paiement intégré, sécurité antifraude en ajoutant les capchat et en sécurisant les routes et les éléments fondamentaux",
     w_projectLink: "https://coupe.academiecreatif.com",
     w_mockupLink: "", 
     w_images: [img_coupe2,img_coupe3,img_coupe4,img_coupe5, img_coupe6]
