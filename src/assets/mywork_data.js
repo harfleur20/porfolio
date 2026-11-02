@@ -73,6 +73,7 @@ import img_coupe6 from './coupeDesCreatifs/interfaces1.jpg'
 import takecare from './takecare.jpg'
 import porfolio from './porfolio.jpg'
 import pad_img from './porfolio_img_pad.png'
+import deploie_java from './Projet Spring PetClinic DevOps.png'
 
 //proclean
 import proclean_img from './ProClean/proclean.jpg'
@@ -97,6 +98,19 @@ const mywork_data = [
     w_mockupLink: "", // Laissez vide si pas de maquette
     w_images: []
   },
+{
+    w_img: deploie_java,
+    w_name: "Déploiement Application FullStack JAVA sur AWS",
+    w_categories: ["infrastructure", "DevOps"],
+    w_status: "online",
+    w_year: "2026",
+    w_type: "Projet Pratique",
+    w_technologies: ["JAVA", "Terraform", "Ansible", "Git", "GitHub", "kubernutes", "Docker", "AWS", "Linux", "Docker & Docker Compose", "Grafana", "Prometheus"],
+    w_description: "Projet de portfolio DevOps basé sur Spring PetClinic : conteneurisation avec Docker, automatisation CI/CD avec Jenkins, infrastructure as code avec Terraform, configuration avec Ansible, déploiement sur AWS et supervision avec Prometheus et Grafana.",
+    w_projectLink: "https://github.com/harfleur20/spring-petclinic",
+    w_mockupLink: "", // Laissez vide si pas de maquette
+    w_images: []
+  },
    {
     w_img: awsImage2,
     w_name: "Déploiement Application Full-Stack sur AWS",
@@ -104,7 +118,7 @@ const mywork_data = [
     w_status: "online",
     w_year: "2026",
     w_type: "Projet Pratique",
-    w_technologies: ["Next.js", "Express", "TypeScript", "Prisma", "PostgreSQL", "AWS EC2", "Amazon RDS", "VPC"],
+    w_technologies: ["Next.js", "Express", "TypeScript", "Prisma", "PostgreSQL", "AWS EC2", "Amazon RDS", "VPC", "Docker"],
     w_description: "Déploiement d’une application full-stack avec Next.js en frontend, une API Express/TypeScript et Prisma pour l’accès aux données. Architecture AWS avec VPC, EC2 et base PostgreSQL sur Amazon RDS, avec séparation des ressources publiques et privées.",
     w_projectLink: "https://github.com/harfleur20/InventoryDataDashboard-Postgres-Node-Tailwind-aws",
     w_mockupLink: "", // Laissez vide si pas de maquette
